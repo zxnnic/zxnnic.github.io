@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap select CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
+    <!-- Bootstrap select JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+    <!-- Local style sheet relative to workspace folder -->
+    <link rel="stylesheet" href="./static/style.css">
+    <!--D3.js-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!--scripts-->
+    <script src="./static/script.js"></script>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/af9c29b2d2.js" crossorigin="anonymous"></script>
+
+    <title>Zixin (Nicole) Zhao</title>
+  </head>
+  <body>
+<main>
+<div class="container">
+    <div class="row my-5">
+        <div class="nav-bar m-0 p-0" id="navigation">
+            <ul class="nav flex-column">
+                <li class="nav-item mt-2 d-flex justify-content-center">
+                    <img src="./media/dog1.gif" width="100px">
+                </li>
+                <!-- <li class="nav-item">
+                    <img src="./media/snowfall.gif" width="75px"><img src="./media/snowfall.gif" width="75px">
+                </li> -->
+                <li class="nav-item item-disabled mt-2">
+                  <a class="nav-link disabled" href="#"><b>Home</b></a>
+                </li>
+                <li class="nav-item item">
+                  <a class="nav-link" href="./media/CV.pdf">Click here for CV</a></a>
+                </li>
+                <li class="nav-item d-flex justify-content-center">
+                  <img src="./media/cherry_blossom.gif" width="130px">
+              </li>
+              </ul>
+        </div>
+        <div class="text-area mx-4">
+            <h1 class="text-center">Welcome to My Website</h1> 
+            <!-- <div class="d-flex justify-content-center">
+                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
+                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
+                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
+            </div> -->
+            <div class="mb-5" id="basic-info">
+                <div class="d-flex justify-content-center my-4">
+                    <img src="./media/me_stare.jpeg" width="200px">
+                </div>
+            My name is Zixin (read as <i>zee-shin</i>) and I occasionally am refered as Nicole. 
+            I'm currently a graduate student completing a PhD in Computer Science at the University of Toronto under the 
+            joint supervision of <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>. I'm working on systems to support creative writing and am interested in looking at language variation over time. I previously completed a MSc at Ontario Tech University under the supervision of <a href="https://vialab.ca" target="_blank">Christopher Collins</a> developing a gaze based reading aid for language learners. I completed a BSc majoring is in Electrical Engineering and minoring in Computing Science. 
+            I am currently working developing writing support tools for fiction authors and exploring languages spoken by immigrants in North America! Send me a message if this is something you're interested in, I'd love to chat :)
+            <br ><br >
+
+            My main research areas are HCI, visualization, NLP, and language learning. You can read through <a href="./media/CV.pdf">my CV</a> to get a better idea of what I've done. 
+
+            
+            </div>
+            <div>
+                <p style="background-color: lightblue;">
+                    Feel free to reach out! Until next time :-)
+                </p>
+                
+                <!-- <div class="d-flex justify-content-center">
+                    <img src="./media/dog1.gif" width="100px">
+                </div> -->
+                
+
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:zzhao1@cs.toronto.edu" target="_blank">Email</a></li>
+                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/zixinnic" target="_blank">Twitter</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/zxxn/" target="_blank">LinkedIn</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/zxnnic" target="_blank">Github (through Issues)</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+        
+</div>   
+<div class="footer">
+    <span class="mx-1">Last updated on <span id="date"></span></span>
+    <span class="align-right mx-1">:-)</span>
+</div>
+
+<script>
+    const date = new Date(document.lastModified);
+    const options = {
+             weekday: 'short',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            };
+    document.getElementById("date").innerHTML = date.toLocaleDateString(undefined,options);
+</script>
+</main>
+</body>
+</html>

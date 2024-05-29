@@ -1,108 +1,259 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JQuery JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap select CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
-    <!-- Bootstrap select JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
-    <!-- Local style sheet relative to workspace folder -->
-    <link rel="stylesheet" href="./static/style.css">
-    <!--D3.js-->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!--scripts-->
-    <script src="./static/script.js"></script>
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/af9c29b2d2.js" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>Zixin (Nicole) Zhao</title>
+
+    <meta name="author" content="Zixin Zhao">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
   </head>
+
   <body>
-<main>
-<div class="container">
-    <div class="row my-5">
-        <div class="nav-bar m-0 p-0" id="navigation">
-            <ul class="nav flex-column">
-                <li class="nav-item mt-2 d-flex justify-content-center">
-                    <img src="./media/dog1.gif" width="100px">
-                </li>
-                <!-- <li class="nav-item">
-                    <img src="./media/snowfall.gif" width="75px"><img src="./media/snowfall.gif" width="75px">
-                </li> -->
-                <li class="nav-item item-disabled mt-2">
-                  <a class="nav-link disabled" href="#"><b>Home</b></a>
-                </li>
-                <li class="nav-item item">
-                  <a class="nav-link" href="./media/CV.pdf">Click here for CV</a></a>
-                </li>
-                <li class="nav-item d-flex justify-content-center">
-                  <img src="./media/cherry_blossom.gif" width="130px">
-              </li>
-              </ul>
-        </div>
-        <div class="text-area mx-4">
-            <h1 class="text-center">Welcome to My Website</h1> 
-            <!-- <div class="d-flex justify-content-center">
-                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
-                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
-                <img src="./media/flower_divider.webp"><img src="./media/flower_divider.webp">
-            </div> -->
-            <div class="mb-5" id="basic-info">
-                <div class="d-flex justify-content-center my-4">
-                    <img src="./media/me_stare.jpeg" width="200px">
-                </div>
-            My name is Zixin (read as <i>zee-shin</i>) and I occasionally am refered as Nicole. 
-            I'm currently a graduate student completing a PhD in Computer Science at the University of Toronto under the 
-            joint supervision of <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>. I'm working on systems to support creative writing and am interested in looking at language variation over time. I previously completed a MSc at Ontario Tech University under the supervision of <a href="https://vialab.ca" target="_blank">Christopher Collins</a> developing a gaze based reading aid for language learners. I completed a BSc majoring is in Electrical Engineering and minoring in Computing Science. 
-            I am currently working developing writing support tools for fiction authors and exploring languages spoken by immigrants in North America! Send me a message if this is something you're interested in, I'd love to chat :)
-            <br ><br >
-
-            My main research areas are HCI, visualization, NLP, and language learning. You can read through <a href="./media/CV.pdf">my CV</a> to get a better idea of what I've done. 
-
-            
-            </div>
-            <div>
-                <p style="background-color: lightblue;">
-                    Feel free to reach out! Until next time :-)
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Zixin (Nicole) Zhao
                 </p>
-                
-                <!-- <div class="d-flex justify-content-center">
-                    <img src="./media/dog1.gif" width="100px">
-                </div> -->
-                
+                <p>My name is Zixin (read as <i>zee-shin</i>) and I occasionally am refered as Nicole. 
+                  I'm currently a graduate student completing a PhD in Computer Science at the University of Toronto under the 
+                  joint supervision of <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>. 
+                  I previously completed a MSc at Ontario Tech University under the supervision of <a href="https://vialab.ca" target="_blank">Christopher Collins</a> developing a gaze based reading aid for language learners. 
+                  I completed a BSc majoring is in Electrical Engineering and minoring in Computing Science. 
+                  
+                </p>
+                <p>
+                  I am currently working developing writing support tools for fiction authors and exploring different ways of representing narratives.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:zzhao1@cs.toronto.edu">Email</a> &nbsp;/&nbsp;
+                  <a href="data/CV.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=nbm_f18AAAAJ&hl=en" target="_blank">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://x.com/zixinnic" target="_blank">Twitter</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/zxnnic" target="_blank">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:30%;max-width:30%" onmouseout="pf_out()" onmouseover="pf_start()">
+                <div class="one">
+                  <div class="two" id='pf_real'>
+                    <img style="width:110%;max-width:110%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images\me_stare.jpeg">
+                  </div>
+                  <img id='pf_drawing' style="width:110%;max-width:110%;border-radius:50%;" alt="profile photo" src="images\me-lean.png">
+                </div>
+                <script type="text/javascript">
+                  function pf_start() {
+                    document.getElementById('pf_drawing').style.opacity = "1";
+                    document.getElementById('pf_real').style.opacity = "0";
+                  }
 
-                <ul>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:zzhao1@cs.toronto.edu" target="_blank">Email</a></li>
-                    <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/zixinnic" target="_blank">Twitter</a></li>
-                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/zxxn/" target="_blank">LinkedIn</a></li>
-                    <li><i class="fab fa-github"></i> <a href="https://github.com/zxnnic" target="_blank">Github (through Issues)</a></li>
-                </ul>
-            </div>
-        </div>
+                  function pf_out() {
+                    document.getElementById('pf_drawing').style.opacity = "0";
+                    document.getElementById('pf_real').style.opacity = "1";
+                  }
+                  nerfbake_stop()
+                </script>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I'm interested in human computer interaction, visualization, and natural language processing. 
+                  Most of my prior works focus on language learning and my recent work is on analyzing fiction text.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    </div>
-        
-</div>   
-<div class="footer">
-    <span class="mx-1">Last updated on <span id="date"></span></span>
-    <span class="align-right mx-1">:-)</span>
-</div>
 
-<script>
-    const date = new Date(document.lastModified);
-    const options = {
-            weekday: 'short',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            };
-    document.getElementById("date").innerHTML = date.toLocaleDateString(undefined,options);
-</script>
-</main>
-</body>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <img src='images/happier.jpeg' width="160">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <span class="papertitle">Make it Happier! Discretizing and Amplifying Happiness in Animated Faces</span>
+                <br>
+                <strong>Zixin Zhao</strong>,
+                Jessica Bo,
+                Karan Singh
+                <br>
+                <em>GI</em> 2024 &nbsp <font color="red"><strong>(Poster)</strong></font>
+                <br>
+                <a href="https://zxnnic.github.io/amplifying-emotion/">project page</a>
+                <p></p>
+                <p>Mapping out levels of happiness using non-linear FACS to control AUs and create realistic smiling faces.</p>
+              </td>
+
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <img src='images/gloss.jpg' width="160">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                  <span class="papertitle">Gloss Positioning for a Gaze Aware L2 Reading Aid</span>
+                <br>
+                <strong>Zixin Zhao</strong>,
+                Christopher Collins
+                <br>
+                Master's Thesis, 2023
+                <br>
+                <a href="https://vialab.ca/wp-content/publication_media/pdf/zha2023a.pdf">pdf</a> /
+                <a href="data/gloss.bib">bibtex</a>
+                <p></p>
+                <p>
+                Language learning application for reading in your second language where definitions and translations of words that the system thinks you don't know shows up automatically.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <img src='images/covid.gif' width="160">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                  <span class="papertitle">Covid Connect: Chat-Driven Anonymous Story-Sharing for Peer Support</span>
+                <br>
+                Christopher Collins, Simone Arbour, Nathan Beals, Shawn Yama, Jennifer Laffier, <strong>Zixin Zhao</strong>
+                <br>
+                <em>DIS</em>, 2022  
+                <br>
+                <a href="https://vialab.ca/research/covid-connect">project page</a> /
+                <a href="https://dl.acm.org/doi/abs/10.1145/3532106.3533545">paper</a> /
+                <a href="data/covid.bib">bibtex</a>
+                <p></p>
+                <p>Using a reflective chatbot to connect community members together during the Covid-19 pandemic.
+                </p>
+              </td>
+            </tr> 
+
+
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <img src='images/negative_transfer.png' width="160">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                  <span class="papertitle">Negative language transfer in learner English: A new dataset</span>
+                <br>
+                Leticia Farias Wanderley, <strong>Nicole Zhao</strong>, and Carrie Demmans Epp
+                <br>
+                <em>NAACL</em>, 2021
+                <br>
+                <a href="https://aclanthology.org/2021.naacl-main.251/">paper</a> /
+                <a href="data/negative.bib">bibtex</a>
+                <p>
+                  Dataset annotated with negative transfer related errors made by Chinese learners of English.
+                </p>
+              </td>
+            </tr>
+<!-- 
+            <tr onmouseout="jump_stop()" onmouseover="jump_start()" bgcolor="#ffffd0">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='jump_image'><img src='images/jump_anim.gif'></div>
+                  <img src='images/jump_still.png'>
+                </div>
+                <script type="text/javascript">
+                  function jump_start() {
+                    document.getElementById('jump_image').style.opacity = "1";
+                  }
+
+                  function jump_stop() {
+                    document.getElementById('jump_image').style.opacity = "0";
+                  }
+                  jump_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://drive.google.com/file/d/1RBnTrtzqmuO8uj3GQaR5vBJZjIC3Jxjn/view?usp=sharing">
+                  <span class="papertitle">Jump: Virtual Reality Video</span>
+                </a>
+                <br>
+                <a href="http://mi.eng.cam.ac.uk/~ra312/">Robert Anderson</a>, <a href="https://www.cs.unc.edu/~gallup/">David Gallup</a>, <strong>Jonathan T. Barron</strong>, <a href="https://mediatech.aalto.fi/~janne/index.php">Janne Kontkanen</a>, <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>, <a href="http://carlos-hernandez.org/">Carlos Hern&aacutendez</a>, <a href="https://homes.cs.washington.edu/~sagarwal/">Sameer Agarwal</a>, <a href="https://homes.cs.washington.edu/~seitz/">Steven M Seitz</a>
+                <br>
+                <em>SIGGRAPH Asia</em>, 2016
+                <br>
+                <a href="https://drive.google.com/file/d/11D4eCDXqqFTtZT0WS2COJE0hsAN3QEww/view?usp=sharing">supplement</a> /
+                <a href="https://www.youtube.com/watch?v=O0qUYynupTI">video</a> /
+                <a href="data/Anderson2016.bib">bibtex</a> /
+                <a href="https://blog.google/products/google-vr/jump-using-omnidirectional-stereo-vr-video/">blog post</a>
+                <p></p>
+                <p>Using computer vision and a ring of cameras, we can make video for virtual reality headsets that is both stereo and 360&deg;.</p>
+                <p>This technology is used by <a href="https://vr.google.com/jump/">Jump</a>. </p>
+              </td>
+            </tr> -->
+
+          </tbody></table>
+
+          
+          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+            <tr>
+              <td>
+                <h2>Miscellanea</h2>
+              </td>
+            </tr>
+          </tbody></table>
+          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
+              <td width="75%" valign="center">
+                <a href="https://cvpr.thecvf.com/Conferences/2024/Organizers">Area Chair, CVPR 2024</a>
+                <br>
+                <a href="https://cvpr2023.thecvf.com/Conferences/2023/Organizers">Demo Chair, CVPR 2023</a>
+                <br>
+                <a href="https://cvpr2022.thecvf.com/area-chairs">Area Chair, CVPR 2022</a>
+                <br>
+                <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair & Award Committee Member, CVPR 2021</a>
+                <br>
+                <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
+                <br>
+                <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <img src="images/cs188.jpg" alt="cs188">
+              </td>
+              <td width="75%" valign="center">
+                <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>
+                <br>
+                <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>
+                <br>
+                <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>
+              </td>
+            </tr> -->
+            
+            
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:center;font-size:small;">
+                  This website is based on <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's code</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
