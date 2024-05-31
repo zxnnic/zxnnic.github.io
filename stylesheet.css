@@ -84,6 +84,11 @@ a {
   font-size: 14px;
 }
 
+body {
+  /* background-image: url("images/blue_sky.jpeg"); */
+  background-repeat: no-repeat;
+}
+
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -133,3 +138,12 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+ul {
+  list-style-type: circle;
+}
+
+a {
+  color: #b32336;
+}
+
