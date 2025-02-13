@@ -147,3 +147,7 @@ a {
   color: #b32336;
 }
 
+.conf {
+  border: #b32336;
+  border-radius: 0.5em;
+}
