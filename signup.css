@@ -1,0 +1,52 @@
+body {
+    /* background-color:#831c17; */
+    height: 100%;
+    background-image: url("./images/writer-background-black.jpg");
+    background-size: cover;
+}
+
+
+.inter-300 {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.inter-500 {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.inter-700 {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.rubik-mono-one-regular {
+    font-family: "Rubik Mono One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.btn-primary {
+    background-color: #ac1d15;
+    border-color: #ac1d15;
+}
+
+.btn-primary:hover {
+    background-color: #831c17;
+    border-color: #831c17;
+}
+
+a {
+    color: #ac1d15;
+}
+
+a:hover {
+    color: #831c17;
+}
