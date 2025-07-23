@@ -46,6 +46,7 @@ $(document).ready(() => {
         // Initial render: show all
         renderPapers();
 
+
         // Button event listeners
         d3.select('#filter-all').on('click', function() { renderPapers(); });
         d3.select('#filter-nlp').on('click', function() { renderPapers(['acl']); });
@@ -106,9 +107,18 @@ $(document).ready(() => {
             `;
             container.node().appendChild(div);
         }
-
-        
     });
+
+    //////////////////////////////////////////////////////////
+    // Funky image
+    // List of random images (add your actual filenames here)
+    const randomImages = ['blue_sky.jpeg', 'cherry_blossom.gif', 'dog1.gif', 'fall_korea_bg.webp', 'flower_divider.webp', 'flower_shower_heart.webp', 'fountain_bg.webp', 'fountain_night_bg.gif', 'happy_holidays_snowflake_glitter.gif', 'heart_avi.gif', 'jungle_bg.gif', 'me_computer.jpeg', 'picnic_avi.gif', 'shining_heart_flower.webp', 'snowfall.gif', 'spin_snowflake.gif', 'undersea_bg.webp', 'winter_avatar.gif'];
+    $('#surprise').on('click', function() {
+        const idx = Math.floor(Math.random() * randomImages.length);
+        const imgTag = `<img src='./images/random/${randomImages[idx]}' style='max-width:100px;width:100%;height:auto;'>`;
+        $('#surprise-image').html(imgTag);
+    });
+
 
     //////////////////////////////////////////////////////////
     // Wave on the bottom
