@@ -1,1 +1,1 @@
-Copied from the source code by Jon Barron: https://jonbarron.info/.
+New original code finally!
