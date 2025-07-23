@@ -1,0 +1,169 @@
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem auto;
+  perspective: 800px;
+}
+.circle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(.4,2,.3,1), opacity 0.3s;
+  opacity: 1;
+}
+.circle .front {
+  transform: rotateY(0deg);
+  z-index: 2;
+  opacity: 1;
+}
+.circle .back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  opacity: 0;
+}
+.circle.swivel .front {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+.circle.swivel .back {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+/* Make profile images circular */
+        html, body {
+  overflow-x: hidden;
+}
+        body {
+    background-color: rgb(252, 252, 252);
+    font-size: 14px;
+    position: relative;
+}
+
+a {
+  color:#396ea0;
+}
+a:hover {
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Songti';
+    src: url("../fonts/SourceHanSerifSC-Light.otf") format("opentype");
+    font-weight: normal; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Songti';
+    src: url("../fonts/SourceHanSerifSC-Bold.otf") format("opentype");
+    font-weight: bold; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica.ttf") format("opentype");
+    font-weight: normal; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica-Oblique.tff") format("opentype");
+    font-weight: normal; 
+    font-style: italic;  
+}
+
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica-BoldOblique.ttf") format("opentype");
+    font-weight: bold; 
+    font-style: italic;  
+}
+
+
+.songti {
+    font-family: 'Songti', serif;
+}
+
+.helvetica {
+    font-family: 'Helvetica', 'Courier New', Courier, monospace;
+}
+
+.single-line {
+    white-space: nowrap;    
+    overflow: hidden;        
+    text-overflow: hidden; 
+}
+
+.grey {
+    color: grey;
+}
+
+.selected {
+    color: rgb(81, 81, 81) !important;
+    pointer-events: none;
+    text-decoration: none !important;
+    cursor: default;
+}
+
+.btn-conf {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  width: fit-content;
+  block-size: fit-content;
+  border-radius: 0.8em;
+  font-weight:600;
+  font-size: small;
+  border: 1.5px solid #a0a0a0;
+  background-color: #f7f7f7;
+  color: #353535;
+}
+
+.btn-conf.cc {
+  border: 1.5px solid #8a3b5a;
+  background-color: #f9dee8;
+  color: #6b1537;
+  
+}
+
+.btn-conf.chi {
+  border: 1.5px solid #938200;
+  background-color: #fefbe2;
+  color: #938200;
+}
+
+.btn-conf.vis {
+  border: 1.5px solid #0c4b24;
+  background-color: #dbece1;
+  color: #0c4b24;
+}
+
+.btn-conf.misc {
+  border: 1.5px solid #473335;
+  background-color: #e6ddde;
+  color: #473335;
+}
+
+.btn-conf.dis {
+  border: 1.5px solid #5A82B3;
+  background-color: #e1e9f1;
+  color: #5A82B3;
+}
+
+.btn-conf.acl {
+  border: 1.5px solid #b9440d;
+  background-color: #edded7;
+  color: #c3470d;
+}

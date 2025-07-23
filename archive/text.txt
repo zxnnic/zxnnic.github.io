@@ -1,0 +1,31 @@
+    
+    // /////////////////////// Page navigation
+    // // Toggle selected class and show/hide content for bio/research links
+    // function showSection(section) {
+    //     if (section === 'bio') {
+    //         $('#show-research').removeClass('selected');
+    //         $('#show-bio').addClass('selected');
+    //         $('#research').fadeOut(dur, function() {
+    //             $('#bio').fadeIn(dur);
+    //         });
+    //     } else {
+    //         $('#show-bio').removeClass('selected');
+    //         $('#show-research').addClass('selected');
+    //         $('#bio').fadeOut(dur, function() {
+    //             $('#research').fadeIn(dur);
+    //         });
+    //     }
+    // }
+
+    // $('#show-bio').on('click', function(e) {
+    //     e.preventDefault();
+    //     showSection('bio');
+    // });
+    // $('#show-research').on('click', function(e) {
+    //     e.preventDefault();
+    //     showSection('research');
+    // });
+
+    // // Initial state: show research, hide bio
+    // $('#bio').hide();
+    // $('#research').show();
