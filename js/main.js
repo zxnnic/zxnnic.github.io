@@ -73,11 +73,11 @@ $(document).ready(() => {
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             container.append('div').html(`
-                <div class="row ${d.class} my-3 paper-row" id="paper-${d.id}">
-                    <div class="col-2">
-                        <img src='${d.icon}' width="120">
+                <div class="row ${d.class} my-5" id="paper-${d.id}">
+                    <div class="col-3">
+                        <img src='${d.icon}' width="100%">
                     </div>
-                    <div class="col-10">
+                    <div class="col-9">
                         <div class="row px-3">
                             <btn class="btn-${d.class} ">${d.conference}</div>
                             <div class="fw-bold px-1">${d.title}</div>
@@ -97,7 +97,9 @@ $(document).ready(() => {
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             div.innerHTML = `
-                <div class="text-center"><img src='${d.icon}' width="auto" height="150"></div>
+                <div class="text-center" style="height:200px;padding:8px;display:flex;align-items:center;justify-content:center;">
+                    <img src='${d.icon}' style="max-height:200px;max-width:100%;object-fit:contain;">
+                </div>
                 <div class="fw-bold px-1">${d.title}</div>
                 <div class="px-1">${authors}</div>
                 <div class="px-1 pt-2" style="font-size:small">${d.tldr}<br/>@${d.conference}</div>
