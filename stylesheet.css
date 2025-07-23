@@ -144,10 +144,10 @@ ul {
 }
 
 a {
-  color: rgb(179, 35, 54);
+  color: #a1d2ff;
 }
 
-.conf {
+.btn-conf {
   padding-left: 0.4em;
   padding-right: 0.4em;
   margin-top: 0.1em;
@@ -157,7 +157,7 @@ a {
   font-weight: 800;
 }
 
-.cc {
+.btn-conf.cc {
   border: 1.5px solid #8a3b5a;
   border-radius: 0.5em;
   background-color: #f9dee8;
@@ -165,35 +165,35 @@ a {
   
 }
 
-.chi {
+.btn-conf.chi {
   border: 1.5px solid #938200;
   border-radius: 0.5em;
   background-color: #fefbe2;
   color: #938200;
 }
 
-.vis {
+.btn-conf.vis {
   border: 1.5px solid #0c4b24;
   border-radius: 0.5em;
   background-color: #dbece1;
   color: #0c4b24;
 }
 
-.misc {
+.btn-conf.misc {
   border: 1.5px solid #473335;
   border-radius: 0.5em;
   background-color: #e6ddde;
   color: #473335;
 }
 
-.dis {
+.btn-conf.dis {
   border: 1.5px solid #5A82B3;
   border-radius: 0.5em;
   background-color: #e1e9f1;
   color: #5A82B3;
 }
 
-.acl {
+.btn-conf.acl {
   border: 1.5px solid #b9440d;
   border-radius: 0.5em;
   background-color: #edded7;
