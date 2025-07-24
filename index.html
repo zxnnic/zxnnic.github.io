@@ -21,31 +21,27 @@
 </head>
 <body>
     <svg id="waves" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></svg>
-    <div class="main-content " style="position:relative;z-index:1;">
-        <header>
-            <div class="row grey songti single-line" id="header">Hello Hi</div>
-        </header>
-        <div class="row g-0 mx-5 px-5">
-            <div class="col-12 col-md-3 d-flex flex-column align-items-center">
+    <header>
+        <div class="row grey songti single-line" id="header">Hello Hi</div>
+    </header>
+    <div class="container" style="z-index:1;">
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <div class="row">
                 <div class="circle mt-5">
                     <img class="front" src="./images/me_stare.jpeg">
                     <img class="back" src="./images/me-lean.png">
                 </div>
                 <div class="fw-bold text-center" style="font-size: larger;">Zixin (Nicole) Zhao</div>
-                <div class="text-center"><i class="songti">zee-shin</i></div>
-                <div class="text-center mx-2" id="short-bio">
-                    <span>
+                <div class="text-center">
+                    <i class="songti">zee-shin</i>
+                    <br/>
                     CS PhD student @ UofToronto
                     <br/>
                     HCI / NLP / Vis
-                    <br />
-                    <!-- Supervised by <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and 
-                    <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>.  -->
-                    </span>
                 </div>
-                <div class="centered mt-3">
+                <div class="centered mt-4">
                     <div class="text-center">
-                        
                         <a href="https://scholar.google.com/citations?user=nbm_f18AAAAJ&hl=en" target="_blank">Scholar</a> &nbsp;/&nbsp;
                         <a href="https://x.com/zixinnic" target="_blank">Twitter</a> &nbsp;/&nbsp;
                         <!-- <a href="https://github.com/zxnnic" target="_blank">Github</a> &nbsp;/&nbsp; -->
@@ -53,56 +49,56 @@
                         <a href="data/pdf/CV.pdf" target="_blank">CV</a>
                     </div>
                 </div>
-                <div class="centered mt-3">
+                <div class="centered mt-4 text-center">
                     <button style="font-size:small" id="surprise">Click me for a suprise</button>
                     <div class="my-3 text-center" id="surprise-image"></div>
                 </div>
             </div>
-            <div class="col-12 col-md-7 pb-5 mb-5">
-                <div class="text-left px-3 m-5" id="bio">
-                    <h5>About me</h5>
-                    <p>
-                    I'm a PhD student in Computer Science at the University of Toronto under the 
-                    joint supervision of <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and 
-                    <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>. 
-                    I previously completed a MSc at Ontario Tech University under the supervision of <a href="https://vialab.ca" target="_blank">Christopher Collins</a> 
-                    developing a gaze based reading aid for language learners. 
-                    I completed a BSc majoring in Electrical Engineering and minoring in Computing Science at the University of Alberta. 
-                    </p>
+        </div>
+        <div class="col-12 col-md-9">
+        <div class="row">
+            <div class="px-3 mt-5" id="bio">
+                <h5>About me</h5>
+                <p>
+                I'm a PhD student in Computer Science at the University of Toronto under the 
+                joint supervision of <a href="http://fannychevalier.net/" target="_blank">Fanny Chevalier</a> and 
+                <a href="https://www.cs.toronto.edu/~gpenn/" target="_blank">Gerald Penn</a>. 
+                I previously completed a MSc at Ontario Tech University under the supervision of <a href="https://vialab.ca" target="_blank">Christopher Collins</a> 
+                developing a gaze based reading aid for language learners. 
+                I completed a BSc majoring in Electrical Engineering and minoring in Computing Science at the University of Alberta. 
+                </p>
+                <br/>
+                <h5>Research</h5>
+                <p>
+                    I am currently focused on studying ways to support <b>creative writing using visualizations</b>.
+                    In tandem with examining <b>AI's ability to understand narrative texts</b>. 
+                    I previously worked within language learning, developing systems that take implicit feedback from gaze to aid language learners
+                    while reading.
+                <br />
                     <br/>
-                    <h5>Research</h5>
-                    <p>
-                      I am currently focused on studying ways to support <b>creative writing using visualizations</b>.
-                      In tandem with examining <b>AI's ability to understand narrative texts</b>. 
-                      I previously worked within language learning, developing systems that take implicit feedback from gaze to aid language learners
-                      while reading.
-                    <br />
-                      <br/>
-                      If these sound like something you're interested in let's chat! 
-                      <br/>
-                      The best way to reach me is via email: <a href="mailto:zzhao1@cs.toronto.edu">zzhao1 (at) cs.toronto.edu</a>
-                    </p>
+                    If these sound like something you're interested in let's chat! 
+                    <br/>
+                    The best way to reach me is via email: <a href="mailto:zzhao1@cs.toronto.edu">zzhao1 (at) cs.toronto.edu</a>
+                </p>
+            </div>
+            <div class="px-3 mb-5 mt-5" id="research">
+                <h5>Relevant Works</h5>
+                <div class="row" id="featured-research">
+                    
                 </div>
-                <div class="text-left px-3 m-5" id="research">
-                    <h5>Relevant Works</h5>
-                    <div class="row" id="featured-research">
-                        
-                    </div>
-                    <h5>All Publications</h5>
-                    <div id="all-research">
-                        <div class="mb-3">
-                            <button id="filter-all" class="btn-conf">All</button>
-                            <button id="filter-nlp" class="btn-conf acl">NLP</button>
-                            <button id="filter-hci" class="btn-conf chi">HCI</button>
-                            <button id="filter-vis" class="btn-conf vis">Vis</button>
-                        </div>
+                <h5>All Publications</h5>
+                <div id="all-research">
+                    <div class="mb-3">
+                        <button id="filter-all" class="btn-conf">All</button>
+                        <button id="filter-nlp" class="btn-conf acl">NLP</button>
+                        <button id="filter-hci" class="btn-conf chi">HCI</button>
+                        <button id="filter-vis" class="btn-conf vis">Vis</button>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </div>
-
-    <!--custom scripts-->
+    </div>
     <script src="js/main.js"></script>
 </body>
-</html>

@@ -92,14 +92,14 @@ $(document).ready(() => {
         // insert them vertically
         function insertDataCol(container, d) {
             const div = document.createElement('div');
-            div.className = `col-4 ${d.class} my-3 paper-row`;
+            div.className = `col-12 col-md-4 ${d.class} my-3 paper-row`;
             div.id = `paper-${d.id}`;
             let authors = d.authors || "";
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             div.innerHTML = `
-                <div class="text-center" style="height:200px;padding:8px;display:flex;align-items:center;justify-content:center;">
-                    <img src='${d.icon}' style="max-height:200px;max-width:100%;object-fit:contain;">
+                <div class="text-center" style="height:250px;padding:8px;display:flex;align-items:center;justify-content:center;">
+                    <img src='${d.icon}' style="max-height:100%;max-width:250px;object-fit:contain;">
                 </div>
                 <div class="fw-bold px-1">${d.title}</div>
                 <div class="px-1">${authors}</div>

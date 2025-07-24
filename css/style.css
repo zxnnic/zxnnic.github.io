@@ -1,3 +1,14 @@
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column !important;
+  }
+  #waves {
+    display: none !important;
+  }
+  header {
+    display: none;
+  }
+}
 .circle {
   position: relative;
   width: 150px;
