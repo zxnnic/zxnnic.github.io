@@ -9,6 +9,43 @@
     display: none;
   }
 }
+
+@font-face {
+    font-family: 'Songti';
+    src: url("../fonts/SourceHanSerifSC-Light.otf") format("opentype");
+    font-weight: normal; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Songti';
+    src: url("../fonts/SourceHanSerifSC-Bold.otf") format("opentype");
+    font-weight: bold; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica.ttf") format("opentype");
+    font-weight: normal; 
+    font-style: normal;  
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica-Oblique.tff") format("opentype");
+    font-weight: normal; 
+    font-style: italic;  
+}
+
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url("../fonts/Helvetica-BoldOblique.ttf") format("opentype");
+    font-weight: bold; 
+    font-style: italic;  
+}
+
 .circle {
   position: relative;
   width: 150px;
@@ -65,43 +102,6 @@ a:hover {
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Songti';
-    src: url("../fonts/SourceHanSerifSC-Light.otf") format("opentype");
-    font-weight: normal; 
-    font-style: normal;  
-}
-
-@font-face {
-    font-family: 'Songti';
-    src: url("../fonts/SourceHanSerifSC-Bold.otf") format("opentype");
-    font-weight: bold; 
-    font-style: normal;  
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url("../fonts/Helvetica.ttf") format("opentype");
-    font-weight: normal; 
-    font-style: normal;  
-}
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url("../fonts/Helvetica-Oblique.tff") format("opentype");
-    font-weight: normal; 
-    font-style: italic;  
-}
-
-
-@font-face {
-    font-family: 'Helvetica';
-    src: url("../fonts/Helvetica-BoldOblique.ttf") format("opentype");
-    font-weight: bold; 
-    font-style: italic;  
-}
-
-
 .songti {
     font-family: 'Songti', serif;
 }
@@ -121,7 +121,6 @@ a:hover {
 }
 
 .selected {
-    color: rgb(81, 81, 81) !important;
     pointer-events: none;
     text-decoration: none !important;
     cursor: default;
@@ -141,6 +140,16 @@ a:hover {
   background-color: #f7f7f7;
   color: #353535;
 }
+#filter-all{
+  border-radius: 1em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.btn-conf.selected {
+  border: 1.5px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+}
 
 .btn-conf.cc {
   border: 1.5px solid #8a3b5a;
@@ -154,11 +163,31 @@ a:hover {
   background-color: #fefbe2;
   color: #938200;
 }
+#filter-hci{
+  border-radius: 1em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.btn-conf.chi.selected {
+  border: 1.5px solid #938200;
+  background-color: #e2c000;
+  color: #ffffff;
+}
 
 .btn-conf.vis {
   border: 1.5px solid #0c4b24;
   background-color: #dbece1;
   color: #0c4b24;
+}
+#filter-vis{
+  border-radius: 1em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.btn-conf.vis.selected {
+  border: 1.5px solid #02180a;
+  background-color: #227e42;
+  color: #ffffff;
 }
 
 .btn-conf.misc {
@@ -177,4 +206,14 @@ a:hover {
   border: 1.5px solid #b9440d;
   background-color: #edded7;
   color: #c3470d;
+}
+#filter-nlp{
+  border-radius: 1em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.btn-conf.acl.selected {
+  border: 1.5px solid #4e1900;
+  background-color: #b9440d;
+  color: #ffffff;
 }

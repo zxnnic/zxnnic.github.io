@@ -36,7 +36,7 @@ $(document).ready(() => {
         data.sort((a, b) => Number(b.id) - Number(a.id));
 
         // Populate featured-research with entries where feature=true
-        featuredContainer.html("");
+        featuredContainer.html("<h5>Relevant Works</h5>");
         data.forEach(function(d) {
             if (d.feature && (d.feature === true || d.feature === "true")) {
                 insertDataCol(featuredContainer, d);
@@ -47,14 +47,24 @@ $(document).ready(() => {
         renderPapers();
 
 
-        // Button event listeners
-        d3.select('#filter-all').on('click', function() { renderPapers(); });
-        d3.select('#filter-nlp').on('click', function() { renderPapers(['acl']); });
-        d3.select('#filter-hci').on('click', function() { renderPapers(['chi', 'uist', 'misc', 'cc']); });
-        d3.select('#filter-vis').on('click', function() { renderPapers(['dis', 'vis']); });
+        // Refactored filter logic using jQuery
+        $('.btn-conf').on('click', function() {
+            $('.btn-conf').removeClass('selected');
+            $(this).addClass('selected');
+            if (this.id === 'filter-all') {
+                renderPapers();
+            } else if (this.id === 'filter-nlp') {
+                renderPapers(['acl']);
+            } else if (this.id === 'filter-hci') {
+                renderPapers(['chi', 'uist', 'misc', 'cc']);
+            } else if (this.id === 'filter-vis') {
+                renderPapers(['dis', 'vis']);
+            }
+        });
 
         // for all the papers
         function renderPapers(filterClasses) {
+            console.log(this)
             container.selectAll('.paper-row').remove();
             data.forEach(function(d) {
                 if (!filterClasses) {
@@ -74,11 +84,11 @@ $(document).ready(() => {
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             container.append('div').html(`
-                <div class="row ${d.class} my-5" id="paper-${d.id}">
-                    <div class="col-3">
-                        <img src='${d.icon}' width="100%">
+                <div class="row ${d.class} my-2 paper-row" id="paper-${d.id}">
+                    <div class="col-12 col-md-3 d-none d-md-block">
+                        <img src='${d.icon}' width="90%">
                     </div>
-                    <div class="col-9">
+                    <div class="col-12 col-md-9">
                         <div class="row px-3">
                             <btn class="btn-${d.class} ">${d.conference}</div>
                             <div class="fw-bold px-1">${d.title}</div>
