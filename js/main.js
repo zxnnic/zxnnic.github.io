@@ -36,7 +36,7 @@ $(document).ready(() => {
         data.sort((a, b) => Number(b.id) - Number(a.id));
 
         // Populate featured-research with entries where feature=true
-        featuredContainer.html("<h5>Relevant Works</h5>");
+        featuredContainer.html("<h5>Recent Works</h5>");
         data.forEach(function(d) {
             if (d.feature && (d.feature === true || d.feature === "true")) {
                 insertDataCol(featuredContainer, d);
