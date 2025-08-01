@@ -117,13 +117,21 @@ $(document).ready(() => {
             let authors = d.authors || "";
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
+            let links = ''
+            if (d.demo_link !== '') {
+                links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
+            }
+            links += `<a href="${d.paper_link}">Paper</a>&nbsp;|&nbsp;
+                    <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             div.innerHTML = `
                 <div class="text-center" style="height:250px;padding:8px;display:flex;align-items:center;justify-content:center;">
                     <img src='${d.icon}' style="max-height:100%;max-width:250px;object-fit:contain;">
                 </div>
                 <div class="fw-bold px-1">${d.title}</div>
                 <div class="px-1">${authors}</div>
-                <div class="px-1 pt-2" style="font-size:small">${d.tldr}<br/>@${d.conference}</div>
+                <div class="px-1 pt-2" style="font-size:small">${d.tldr}</div>
+                <div class="px-1 my-1">${links}</div>
+                <div class="px-1">@${d.conference}</div>
             `;
             container.node().appendChild(div);
         }
