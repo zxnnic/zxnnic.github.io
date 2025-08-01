@@ -88,7 +88,7 @@ $(document).ready(() => {
             if (d.demo_link !== '') {
                 links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
             }
-            links += `<a href="${d.paper_link}">Paper</a>&nbsp;|&nbsp;
+            links += `<a href="${d.paper_link}" target="_blank">Paper</a>&nbsp;|&nbsp;
                     <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             container.append('div').html(`
                 <div class="row ${d.class} my-2 paper-row" id="paper-${d.id}">
@@ -121,7 +121,7 @@ $(document).ready(() => {
             if (d.demo_link !== '') {
                 links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
             }
-            links += `<a href="${d.paper_link}">Paper</a>&nbsp;|&nbsp;
+            links += `<a href="${d.paper_link}" target="_blank">Paper</a>&nbsp;|&nbsp;
                     <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             div.innerHTML = `
                 <div class="text-center" style="height:250px;padding:8px;display:flex;align-items:center;justify-content:center;">
