@@ -80,9 +80,16 @@ $(document).ready(() => {
         }
         // insert them one row at a time
         function insertDataRow(container, d) {
+            console.log(d)
             let authors = d.authors || "";
             authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
                              .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
+            let links = ''
+            if (d.demo_link !== '') {
+                links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
+            }
+            links += `<a href="${d.paper_link}">Paper</a>&nbsp;|&nbsp;
+                    <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             container.append('div').html(`
                 <div class="row ${d.class} my-2 paper-row" id="paper-${d.id}">
                     <div class="col-12 col-md-3 d-none d-md-block">
@@ -94,6 +101,9 @@ $(document).ready(() => {
                             <div class="fw-bold px-1">${d.title}</div>
                             <div class="px-1">${authors}</div>
                             <div class="px-1 pt-2" style="font-size:small">${d.tldr}</div>
+                            <div class="px-1 my-2">
+                                ${links}
+                            </div>
                         </div>
                     </div>
                 </div>
