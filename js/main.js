@@ -35,10 +35,10 @@ $(document).ready(() => {
         // Sort data in reverse order by id
         data.sort((a, b) => Number(b.id) - Number(a.id));
 
-        // Populate featured-research with entries where feature=true
+        // Populate featured-research with entries where feature=true (case-insensitive)
         featuredContainer.html("<h5>Recent Works</h5>");
         data.forEach(function(d) {
-            if (d.feature && (d.feature === true || d.feature === "true")) {
+            if (d.feature && (d.feature === true || String(d.feature).toLowerCase() === "true")) {
                 insertDataCol(featuredContainer, d);
             }
         });
@@ -152,44 +152,4 @@ $(document).ready(() => {
         const imgTag = `<img src='./images/random/${randomImages[idx]}' style='max-width:150px;height:100%;height:auto;'>`;
         $('#surprise-image').html(imgTag);
     });
-
-
-    // //////////////////////////////////////////////////////////
-    // // Wave on the bottom
-    // const width = window.innerWidth;
-    // const height = window.innerHeight;
-    // d3.select('#waves')
-    //   .attr('class', 'waves')
-    //   .attr('width', width)
-    //   .attr('height', height)
-    //   .style('position', 'fixed')
-    //   .style('top', 0)
-    //   .style('left', 0)
-    //   .style('z-index', 0)
-    //   .style('pointer-events', 'none');
-
-    // const svg = d3.select('.waves');
-
-    // // Grass waves
-    // const waveData = [
-    //   { y: 0.9, color: '#a1d2ff', opacity: 0.05, amp: 35, freq: 2 },
-    //   { y: 0.95, color: '#a1d2ff', opacity: 0.1, amp: 20, freq: 3 }
-    // ];
-
-    // waveData.forEach(wave => {
-    //   const points = [];
-    //   for (let x = 0; x <= width; x += 10) {
-    //     const y = height * wave.y + Math.sin(x / width * Math.PI * wave.freq) * wave.amp;
-    //     points.push([x, y]);
-    //   }
-    //   let path = `M0,${height} L0,${points[0][1]}`;
-    //   points.forEach(([x, y]) => {
-    //     path += ` L${x},${y}`;
-    //   });
-    //   path += ` L${width},${height} Z`;
-    //   svg.append('path')
-    //     .attr('d', path)
-    //     .attr('fill', wave.color)
-    //     .attr('opacity', wave.opacity);
-    // });
 });
