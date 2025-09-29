@@ -248,3 +248,12 @@ a:hover {
   box-shadow: 1px 1px 0 #888;
   font-style: italic;
 }
+
+.icon-img {
+  height: 200px;
+  max-width: 100%;
+  padding:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

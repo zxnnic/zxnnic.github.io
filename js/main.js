@@ -92,8 +92,11 @@ $(document).ready(() => {
                     <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             container.append('div').html(`
                 <div class="row ${d.class} my-2 paper-row" id="paper-${d.id}">
-                    <div class="col-12 col-md-3 d-none d-md-block">
-                        <img src='${d.icon}' width="90%">
+                    <div class="col-12 col-md-3 d-none d-md-block" style="max-width:150px;height:100%;">
+                        <img src='${d.icon}' width="150px" 
+                            onmouseover="this.src='${d.icon_moving}'"
+                            onmouseout="this.src='${d.icon}'"
+                        />
                     </div>
                     <div class="col-12 col-md-9">
                         <div class="row px-3">
@@ -124,8 +127,11 @@ $(document).ready(() => {
             links += `<a href="${d.paper_link}" target="_blank">Paper</a>&nbsp;|&nbsp;
                     <a href="${d.bibtext}" target="_blank">Bibtex</a>`;
             div.innerHTML = `
-                <div class="text-center" style="height:200px;padding:8px;display:flex;align-items:center;justify-content:center;">
-                    <img src='${d.icon}' style="max-height:100%;max-width:200px;object-fit:contain;">
+                <div class="text-center icon-img">
+                    <img src='${d.icon_moving}' style="height:100%;max-width:auto;object-fit:contain;"
+                        onmouseover="this.src='${d.icon_moving}'"
+                        onmouseout="this.src='${d.icon_moving}'"
+                    />
                 </div>
                 <div class="fw-bold px-1">${d.title}</div>
                 <div class="px-1">${authors}</div>
@@ -136,6 +142,7 @@ $(document).ready(() => {
             container.node().appendChild(div);
         }
     });
+
 
     //////////////////////////////////////////////////////////
     // Funky image
