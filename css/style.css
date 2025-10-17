@@ -1,3 +1,13 @@
+/* cheek color: e0525d */
+
+::selection {
+  background: #e0525d;
+  /* background: #e4f2ff; */
+}
+::-moz-selection {
+  background: #e0525d;
+  /* background: #e4f2ff; */
+}
 @media (max-width: 768px) {
   .row {
     flex-direction: column !important;
@@ -7,6 +17,19 @@
   }
   header {
     display: none;
+  }
+  .col,
+  [class^="col-"] {
+    border: none !important;
+  }
+  /* Center contents of left column on small screens */
+  #left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -63,40 +86,30 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  backface-visibility: hidden;
-  transition: transform 0.6s cubic-bezier(.4,2,.3,1), opacity 0.3s;
+  transition: opacity 0.25s ease-in-out;
   opacity: 1;
 }
-.circle .front {
-  transform: rotateY(0deg);
-  z-index: 2;
-  opacity: 1;
-}
+.circle .front,
 .circle .back {
-  transform: rotateY(180deg);
-  z-index: 1;
-  opacity: 0;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
 }
-.circle.swivel .front {
-  transform: rotateY(180deg);
-  opacity: 0;
-}
-.circle.swivel .back {
-  transform: rotateY(0deg);
-  opacity: 1;
-}
+.circle .front { z-index: 2; }
+.circle .back  { z-index: 1; opacity: 0; }
 /* Make profile images circular */
-        html, body {
+html, body {
   overflow-x: hidden;
 }
-        body {
+body {
     background-color: rgb(252, 252, 252);
     font-size: 14px;
     position: relative;
 }
 
 a {
-  color:#396ea0;
+  color:#b02a35;
+  /* color: #af3157 */
 }
 a:hover {
     font-style: italic;
@@ -126,30 +139,66 @@ a:hover {
     cursor: default;
 }
 
-.btn-conf {
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  margin-top: 0.1em;
-  margin-bottom: 0.1em;
-  width: fit-content;
-  block-size: fit-content;
-  border-radius: 0.8em;
-  font-weight:600;
-  font-size: small;
-  border: 1.5px solid #a0a0a0;
-  background-color: #f7f7f7;
-  color: #353535;
+.btn-conf-filter  {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  margin: 0.15rem 0.15rem 0.15rem 0;
+  min-height: 1.5rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(0,0,0,0.12);
+  background-color: #ffffff;
+  color: #222222;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  cursor: pointer;
+  width: auto; /* fit content */
+  max-width: none;
+  align-self: flex-start; /* avoid stretching in flex containers */
+}
+.btn-conf-filter:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+.btn-conf-filter:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+}
+
+.btn-conf  {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.18rem 0.45rem;
+  min-height: 1.6rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  font-size: 0.78rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  color: #222222;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+  width: auto; /* fit content */
+  max-width: none;
+  align-self: flex-start; /* avoid stretching in flex containers */
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background-color 0.12s ease;
 }
 #filter-all{
   border-radius: 1em;
   padding-left: 0.6em;
   padding-right: 0.6em;
 }
-.btn-conf.selected {
-  border: 1.5px solid #ffffff;
-  background-color: #ffffff;
+
+.btn-conf-filter.selected {
+  border: 1px solid rgba(0,0,0,0.08);
+  background-color: #f1f5f9;
   color: #000000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06) inset;
 }
+
 
 /* .btn-conf.cc {
   border: 1.5px solid #8a3b5a;
@@ -157,78 +206,65 @@ a:hover {
   color: #6b1537;
   
 } */
-.btn-conf.uist {
-  border: 1.5px solid #938200;
-  background-color: #fefbe2;
-  color: #938200;
-}
 
-.btn-conf.cc {
-  border: 1.5px solid #938200;
-  background-color: #fefbe2;
-  color: #938200;
+.btn-conf.hci {
+  border: 1px solid rgba(147,130,0,0.12);
+  background-color: #fff9e6;
+  color: #7a6610;
 }
-.btn-conf.chi {
-  border: 1.5px solid #938200;
-  background-color: #fefbe2;
-  color: #938200;
+.btn-conf-filter.hci {
+  border: 1px solid rgba(147,130,0,0.12);
+  background-color: #fff9e6;
+  color: #7a6610;
 }
-.btn-conf.dis {
-  border: 1.5px solid #938200;
-  background-color: #fefbe2;
-  color: #938200;
+.btn-conf.vis {
+  border: 1px solid #b1c9e9;
+  background-color: #e8eff7;
+  color: #567eaf;
+}
+.btn-conf-filter.vis {
+  border: 1px solid #b1c9e9;
+  background-color: #e8eff7;
+  color: #567eaf;
 }
 #filter-hci{
   border-radius: 1em;
   padding-left: 0.6em;
   padding-right: 0.6em;
 }
-.btn-conf.chi.selected {
-  border: 1.5px solid #938200;
+.btn-conf-filter.hci.selected {
   background-color: #e2c000;
   color: #ffffff;
+  border-color: rgba(0,0,0,0.06);
 }
 
-.btn-conf.vis {
-  border: 1.5px solid #5A82B3;
-  background-color: #e1e9f1;
-  color: #5A82B3;
-}
+
 #filter-vis{
   border-radius: 1em;
   padding-left: 0.6em;
   padding-right: 0.6em;
 }
-.btn-conf.vis.selected {
-  border: 1.5px solid rgb(18, 46, 81);
-  background-color: #5A82B3;
-  color: rgb(255, 255, 255);
+.btn-conf-filter.vis.selected {
+  background-color: #729aca;
+  color: #ffffff;
 }
 
-.btn-conf.misc {
-  border: 1.5px solid #473335;
-  background-color: #e6ddde;
-  color: #473335;
+.btn-conf-filter.nlp {
+  border: 1px solid rgba(12,75,36,0.12);
+  background-color: #f1fbf6;
+  color: #0b5130;
 }
-
-/* .btn-conf.dis {
-  border: 1.5px solid #5A82B3;
-  background-color: #e1e9f1;
-  color: #5A82B3;
-} */
-
-.btn-conf.acl {
-  border: 1.5px solid #0c4b24;
-  background-color: #dbece1;
-  color: #0c4b24;
+.btn-conf.nlp {
+  border: 1px solid rgba(12,75,36,0.12);
+  background-color: #f1fbf6;
+  color: #0b5130;
 }
 #filter-nlp{
   border-radius: 1em;
   padding-left: 0.6em;
   padding-right: 0.6em;
 }
-.btn-conf.acl.selected {
-  border: 1.5px solid #02180a;
+.btn-conf-filter.nlp.selected {
   background-color: #227e42;
   color: #ffffff;
 }
@@ -261,3 +297,24 @@ a:hover {
 img:hover {
   cursor:pointer;
 }
+
+.apercu {
+  font-family: 'Apercu Mono Pro', sans-serif;
+
+}
+
+/* Bibtex modal styles */
+#bib-modal { position: fixed; inset: 0; z-index: 2000; display: none; }
+#bib-modal .bib-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+#bib-modal .bib-box { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; max-width: 90%; width: 720px; padding: 1rem; border-radius: 3px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+#bib-modal .bib-close { position: absolute; right: 8px; top: 8px; background: transparent; border: none; font-size: 1.8rem; cursor: pointer; }
+#bib-modal .bib-content { white-space: pre-wrap; max-height: 60vh; overflow: auto; font-family: monospace; font-size: 0.8rem; margin-top: 1.8rem; }
+
+@media (max-width: 480px) {
+  #bib-modal .bib-box { width: 94%; padding: 0.6rem; }
+  #bib-modal .bib-close { font-size: 1.2rem; }
+}
+
+/* Ensure filter group doesn't force buttons to full width */
+.mb-3 { display: flex; flex-wrap: wrap; align-items: center; }
+.mb-3 .btn-conf { margin-right: 0.5rem; }

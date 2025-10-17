@@ -1,10 +1,114 @@
 id,title,authors,tldr,conference,paper_link,demo_link,bibtext,class,icon,icon_moving,feature
-1,Negative language transfer in learner English: A new dataset,"Leticia Farias Wanderley, Nicole Zhao, and Carrie Demmans Epp",Dataset annotated with negative transfer related errors made by Chinese learners of English.,NAACL 2021,https://aclanthology.org/2021.naacl-main.251/,,data/bibtex/negative.bib,conf acl,images/negative_transfer.png,images/negative_transfer.png,FALSE
-2,Covid Connect: Chat-Driven Anonymous Story-Sharing for Peer Support,"Christopher Collins, Simone Arbour, Nathan Beals, Shawn Yama, Jennifer Laffier, Zixin Zhao",Using a reflective chatbot to connect community members together during the Covid-19 pandemic.,DIS 2022,https://dl.acm.org/doi/abs/10.1145/3532106.3533545,https://covidconnect.me/,data/bibtex/covid.bib,conf dis,images/covid.gif,images/covid.gif,FALSE
-3,Gloss Positioning for a Gaze Aware L2 Reading Aid,"Zixin Zhao, Christopher Collins",Language learning application for reading in your second language where definitions and translations of words that the system thinks you don't know shows up automatically.,Master's Thesis 2023,https://vialab.ca/wp-content/publication_media/pdf/zha2023a.pdf,,data/bibtex/gloss.bib,conf misc,images/gloss.jpg,images/gloss.jpg,FALSE
-4,Make it Happier! Discretizing and Amplifying Happiness in Animated Faces,"Zixin Zhao, Jessica Bo, Karan Singh",Mapping out levels of happiness using non-linear FACS to control AUs and create realistic smiling faces.,GI 2024,https://zxnnic.github.io/amplifying-emotion/,,,conf misc,images/happier.jpeg,images/happier.jpeg,FALSE
-5,AdVizor: Using Visual Explanations to Guide Data-Driven Student Advising,"Riley Weagant, Zixin Zhao, Adam Bradley, Christopher Collins",Visualization to suport advisors with exploring student outcome predictions during academic advising sessions.,EduVis 2024,data/pdf/AdVizor__EduVis_2024_final.pdf,,data/bibtex/advizor.bib,conf vis,images/advizor_teaser.png,images/advizor_teaser.png,FALSE
-6,Multi-Agent Based Character Simulation for Story Writing,"Tian Yu, Ken Shi, Zixin Zhao, Gerald Penn",Generating stories using LLM-based multi-agents.,In2Writing 2025,https://aclanthology.org/2025.in2writing-1.9/,,data/bibtex/multiagent.bib,conf acl,images/agent-story-teaser.png,images/agent-story-teaser.png,FALSE
-7,Making the Write Connections: Linking Writing Support Tools with Writer Needs,"Zixin Zhao, Damien Masson, Youngho Kim, Gerald Penn, Fanny Chevalier",Data triangulation to align tools from prior literature and commercial tools to creative writer's needs.,CHI 2025,data/pdf/chi25-78.pdf,https://thewriteconnection.github.io/,data/bibtex/wst.bib,conf chi,images/wst-teaser.jpg,images/wst-teaser.gif,TRUE
-8,Nabokov's Cards: An AI Assisted Prewriting System to Support Bottom-Up Creative Writing,"Dashiel Cerrera, Zixin Zhao, Ashish Thomas, Daniel Wigdor",Supporting bottom-up creativity using LLMs with a system inspired by Nabokov's Cards.,C&C 2025,data/pdf/Nabakov_s_Cards_C_C_2025.pdf,https://creative-c9e7df5a5b26.herokuapp.com/board,data/bibtex/nabokov.bib,conf cc,images/nabokov-teaser.jpg,images/nabokov-teaser.gif,TRUE
-9,Visual Story-Writing: Writing by Manipulating Visual Representations of Stories,"Damien Masson, Zixin Zhao, Fanny Chevalier","Writing stories by manipulating visual represenation of story elements like character actions, locations, and timelines.",UIST 2025,data//pdf//visualstorywriting.pdf,https://damienmasson.com/VisualStoryWriting/,data//bibtex//visualstorywriting.bib,conf uist,images/visualstory.jpg,images/visualstory.gif,TRUE
+1,Negative language transfer in learner English: A new dataset,"Leticia Farias Wanderley, Nicole Zhao, and Carrie Demmans Epp",Dataset annotated with negative transfer related errors made by Chinese learners of English.,NAACL 2021,https://aclanthology.org/2021.naacl-main.251/,,"""@inproceedings{farias-wanderley-etal-2021-negative,
+    title = ""Negative language transfer in learner {E}nglish: A new dataset"",
+    author = ""Farias Wanderley, Leticia  and
+      Zhao, Nicole  and
+      Demmans Epp, Carrie"",
+    editor = ""Toutanova, Kristina  and
+      Rumshisky, Anna  and
+      Zettlemoyer, Luke  and
+      Hakkani-Tur, Dilek  and
+      Beltagy, Iz  and
+      Bethard, Steven  and
+      Cotterell, Ryan  and
+      Chakraborty, Tanmoy  and
+      Zhou, Yichao"",
+    booktitle = ""Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"",
+    month = jun,
+    year = ""2021"",
+    address = ""Online"",
+    publisher = ""Association for Computational Linguistics"",
+    url = ""https://aclanthology.org/2021.naacl-main.251"",
+    doi = ""10.18653/v1/2021.naacl-main.251"",
+    pages = ""3129--3142"",
+}""",conf nlp,images/negative_transfer.png,images/negative_transfer.png,FALSE
+2,Covid Connect: Chat-Driven Anonymous Story-Sharing for Peer Support,"Christopher Collins, Simone Arbour, Nathan Beals, Shawn Yama, Jennifer Laffier, Zixin Zhao",Using a reflective chatbot to connect community members together during the Covid-19 pandemic.,DIS 2022,https://dl.acm.org/doi/abs/10.1145/3532106.3533545,https://covidconnect.me/,"""@inproceedings{col2022a,
+title={Covid Connect: Chat-Driven Anonymous Story-Sharing for Peer Support},
+author={Collins, Christopher and Arbour, Simone and Beals, Nathan and Yama, Shawn and Laffier, Jennifer and Zhao, Zixin},
+booktitle = {ACM Designing Interactive Systems Conference},
+month = jun,
+year = 2022,
+doi = {10.1145/3532106.3533545}
+}""",conf vis,images/covid.gif,images/covid.gif,FALSE
+3,Gloss Positioning for a Gaze Aware L2 Reading Aid,"Zixin Zhao, Christopher Collins",Language learning application for reading in your second language where definitions and translations of words that the system thinks you don't know shows up automatically.,Master's Thesis 2023,https://vialab.ca/wp-content/publication_media/pdf/zha2023a.pdf,,"""@MastersThesis{zha2023a, 
+author={Zixin Zhao}, 
+title={Gloss Positioning for a Gaze Aware L2 Reading Aid}, 
+school={University of Ontario Institute of Technology}, 
+year=2023
+}""",conf hci,images/gloss.jpg,images/gloss.jpg,FALSE
+4,Make it Happier! Discretizing and Amplifying Happiness in Animated Faces,"Zixin Zhao, Jessica Bo, Karan Singh",Mapping out levels of happiness using non-linear FACS to control AUs and create realistic smiling faces.,GI 2024,https://zxnnic.github.io/amplifying-emotion/,,,conf hci,images/happier.jpeg,images/happier.jpeg,FALSE
+5,AdVizor: Using Visual Explanations to Guide Data-Driven Student Advising,"Riley Weagant, Zixin Zhao, Adam Bradley, Christopher Collins",Visualization to suport advisors with exploring student outcome predictions during academic advising sessions.,EduVis 2024,data/pdf/AdVizor__EduVis_2024_final.pdf,,"""@inproceedings{weagantzhao-2024,
+  author={Weagant, Riley and Zhao, Zixin and Bradley, Adam and Collins, Christopher},
+  booktitle={2024 IEEE VIS Workshop on Visualization Education, Literacy, and Activities (EduVIS)}, 
+  title={AdVizor: Using Visual Explanations to Guide Data-Driven Student Advising}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={21-29},
+  keywords={Training;Visualization;Navigation;Conferences;Data visualization;Predictive models;Human in the loop;Random forests;Information Visualization;Academic Risk Prediction;Academic Advising;Learning Analytics},
+  doi={10.1109/EduVIS63909.2024.00008}}""",conf vis,images/advizor_teaser.png,images/advizor_teaser.png,FALSE
+6,Multi-Agent Based Character Simulation for Story Writing,"Tian Yu, Ken Shi, Zixin Zhao, Gerald Penn",Generating stories using LLM-based multi-agents.,In2Writing 2025,https://aclanthology.org/2025.in2writing-1.9/,,"""@inproceedings{yu-etal-2025-multi,
+    title = ""Multi-Agent Based Character Simulation for Story Writing"",
+    author = ""Yu, Tian  and
+      Shi, Ken  and
+      Zhao, Zixin  and
+      Penn, Gerald"",
+    editor = ""Padmakumar, Vishakh  and
+      Gero, Katy  and
+      Wambsganss, Thiemo  and
+      Sterman, Sarah  and
+      Huang, Ting-Hao  and
+      Zhou, David  and
+      Chung, John"",
+    booktitle = ""Proceedings of the Fourth Workshop on Intelligent and Interactive Writing Assistants (In2Writing 2025)"",
+    month = may,
+    year = ""2025"",
+    address = ""Albuquerque, New Mexico, US"",
+    publisher = ""Association for Computational Linguistics"",
+    url = ""https://aclanthology.org/2025.in2writing-1.9/"",
+    pages = ""87--108"",
+    ISBN = ""979-8-89176-239-8"",
+}""",conf nlp,images/agent-story-teaser.png,images/agent-story-teaser.png,FALSE
+7,Making the Write Connections: Linking Writing Support Tools with Writer Needs,"Zixin Zhao, Damien Masson, Youngho Kim, Gerald Penn, Fanny Chevalier",Data triangulation to align tools from prior literature and commercial tools to creative writer's needs.,CHI 2025,data/pdf/chi25-78.pdf,https://thewriteconnection.github.io/,"""@inproceedings{zhao2025,
+  title={Making the Write Connections: Linking Writing Support Tools with Writer's Needs},
+  author={Zhao, Zixin and Masson, Damien and Kim, Young-Ho and Penn, Gerald and Chevalier, Fanny},
+year = {2025},
+isbn = {9798400703300},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3706598.3713161},
+doi = {3706598.3713161},
+booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems},
+articleno = {78},
+numpages = {21},
+keywords = {Creative writing, meta-analysis, literature review, data triangulation},
+location = {Yokohama, Kanagawa, Japan},
+series = {CHI '25}
+}""",conf hci,images/wst-teaser.jpg,images/wst-teaser.gif,TRUE
+8,Nabokov's Cards: An AI Assisted Prewriting System to Support Bottom-Up Creative Writing,"Dashiel Cerrera, Zixin Zhao, Ashish Thomas, Daniel Wigdor",Supporting bottom-up creativity using LLMs with a system inspired by Nabokov's Cards.,C&C 2025,data/pdf/Nabakov_s_Cards_C_C_2025.pdf,https://creative-c9e7df5a5b26.herokuapp.com/board,"""@inproceedings{cerrera-2025,
+    title = ""Nabokov's Cards: An LLM-Assisted Co-Writing System to Support Bottom-Up Creative Writing"",
+    author = ""Cerrera, Dashiel and
+    Zhao, Zixin and
+    Thomas, Ashish Ajin and
+    Wigdor, Daniel"",
+    booktitle = ""Proceedings of the ACM Creativity and Cognition 2025 conference"",
+    month = july,
+    year = ""2025"",
+    address = ""New York, NY, USA"",
+    publisher = ""Association for Computing Machinery"",
+    doi = ""10.1145/3698061.3726916""
+}""",conf hci,images/nabokov-teaser.jpg,images/nabokov-teaser.gif,TRUE
+9,Visual Story-Writing: Writing by Manipulating Visual Representations of Stories,"Damien Masson, Zixin Zhao, Fanny Chevalier","Writing stories by manipulating visual represenation of story elements like character actions, locations, and timelines.",UIST 2025,data//pdf//visualstorywriting.pdf,https://damienmasson.com/VisualStoryWriting/,"""@inproceedings{10.1145/3746059.3747758,
+    author = ""Masson, Damien and Zhao, Zixin and Chevalier, Fanny"",
+    title = ""Visual Story-Writing: Writing by Manipulating Visual Representations of Stories"",
+    year = ""2025"",
+    isbn = ""9798400720376"",
+    publisher = ""Association for Computing Machinery"",
+    address = ""New York, NY, USA"",
+    url = ""https://doi.org/10.1145/3746059.3747758"",
+    doi = ""10.1145/3746059.3747758"",
+    booktitle = ""Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology"",
+    numpages = ""15"",
+    location = ""Busan, Republic of Korea"",
+    series = ""UIST '25""
+}""",conf hci,images/visualstory.jpg,images/visualstory.gif,TRUE
