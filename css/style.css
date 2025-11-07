@@ -1,7 +1,7 @@
 /* cheek color: e0525d */
 
 ::selection {
-  background: #e0525d;
+  background: #ffd2d6;
   /* background: #e4f2ff; */
 }
 ::-moz-selection {
@@ -115,6 +115,9 @@ a:hover {
     font-style: italic;
 }
 
+.highlighted {
+    background: #ffd2d6;
+}
 .songti {
     font-family: 'Songti', serif;
 }
