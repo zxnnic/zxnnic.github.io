@@ -112,3 +112,13 @@ series = {CHI '25}
     location = ""Busan, Republic of Korea"",
     series = ""UIST '25""
 }""",conf hci,images/visualstory.jpg,images/visualstory.gif,https://www.youtube.com/watch?v=wImiL14-jdc,TRUE
+10,"Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship","Patrick Yung Kang Lee, Jessica Y. Bo, Zixin Zhao, Paula Akemi Aoyagui, Matthew Varona, Ashton Anderson, Anastasia Kuziminykh, Fanny Chevalier, Carolina Nobre","Triangulation study on how individuals with general purpose AI (e.g. chatGPT) companions perceive the companion's autonomy, external influences on the relationship, and strategies used to maintain the relationship.",ArXiv,data//pdf//aiboyfriendpreprint.pdf,,"""@inproceedings{lee_boyfriend2026,
+  title={Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship},
+  author={Lee, Patrick Yung Kang and Bo, Jessica Y. and Zhao, Zixin and Aoyagui, Paula Akemi and Varona, Matthew and Anderson, Ashton and Kuzminykh, Anastasia and Chevalier, Fanny and Nobre, Carolina},
+year = {2026},
+publisher = {ArXiv},
+abstract = {
+This work sheds light on whether and how creative writers' needs are met by existing research and commercial writing support tools (WST). We conducted a need finding study to gain insight into the writers' process during creative writing through a qualitative analysis of the response from an online questionnaire and Reddit discussions on r/Writing. Using a systematic analysis of 115 tools and 67 research papers, we map out the landscape of how digital tools facilitate the writing process. Our triangulation of data reveals that research predominantly focuses on the writing activity and overlooks pre-writing activities and the importance of visualization. We distill 10 key takeaways to inform future research on WST and point to opportunities surrounding underexplored areas. Our work offers a holistic and up-to-date account of how tools have transformed the writing process, guiding the design of future tools that address writers' evolving and unmet needs.},
+numpages = {20},
+keywords = {Human-AI relationship, AI companionship, mixed-methods},
+}""",conf hci,images/aiboyfriend-teaser.png,,,FALSE
