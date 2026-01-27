@@ -77,3 +77,17 @@ table, th, td {
 .align-right {
     float: right
 }
+
+@media (max-width: 768px) {
+    .text-area {
+        width: 100%;
+    }
+    .main-content {
+        margin: 1rem;
+    }
+    .nav-bar {
+        width: auto;
+        height: auto;
+        margin-left: 0;
+    }
+}

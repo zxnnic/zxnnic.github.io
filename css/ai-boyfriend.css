@@ -116,3 +116,20 @@ html, body { overflow-x: hidden; }
     background-color: #4d00440a;
     color:#000000;
 }
+
+@media (max-width: 768px) {
+    .slides-container {
+        width: 100vw;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .slide {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        align-items: stretch;
+    }
+    .slide .heading1 { max-width: 100%; }
+    .slide .title { width: 100%; }
+    #ai-image { max-width: 100%; width: auto; }
+}
