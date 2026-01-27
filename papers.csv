@@ -112,7 +112,7 @@ series = {CHI '25}
     location = ""Busan, Republic of Korea"",
     series = ""UIST '25""
 }""",conf hci,images/visualstory.jpg,images/visualstory.gif,https://www.youtube.com/watch?v=wImiL14-jdc,TRUE
-10,"Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship","Patrick Yung Kang Lee, Jessica Y. Bo, Zixin Zhao, Paula Akemi Aoyagui, Matthew Varona, Ashton Anderson, Anastasia Kuziminykh, Fanny Chevalier, Carolina Nobre",Triangulation study on how individuals with general purpose AI (e.g. chatGPT) companions form and maintain their relationship.,ArXiv,data//pdf//aiboyfriendpreprint.pdf,,"""@inproceedings{lee_boyfriend2026,
+10,"Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship","Patrick Yung Kang Lee, Jessica Y. Bo, Zixin Zhao, Paula Akemi Aoyagui, Matthew Varona, Ashton Anderson, Anastasia Kuziminykh, Fanny Chevalier, Carolina Nobre",Triangulation study on how individuals with general purpose AI (e.g. chatGPT) companions form and maintain their relationship.,ArXiv,https://arxiv.org/abs/2601.13188,https://zxnnic.github.io/ai-companion,"""@inproceedings{lee_boyfriend2026,
   title={Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship},
   author={Lee, Patrick Yung Kang and Bo, Jessica Y. and Zhao, Zixin and Aoyagui, Paula Akemi and Varona, Matthew and Anderson, Ashton and Kuzminykh, Anastasia and Chevalier, Fanny and Nobre, Carolina},
 year = {2026},
