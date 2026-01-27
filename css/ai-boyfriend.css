@@ -1,0 +1,118 @@
+.zalando-sans-expanded {
+font-family: "Zalando Sans Expanded", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+font-style: normal;
+}
+.zalando-sans {
+  font-family: "Zalando Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* Wireframe / demo styles for GSAP animation */
+.ai-wireframe {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+}
+#ai-image {
+    max-width: none;
+    /* Make the image occupy roughly half the viewport */
+    width: 50vw;
+    max-height: auto;
+    height: auto;
+    display: block;
+    transform-origin: center center;
+    transform: none;
+    will-change: transform;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.25));
+}
+
+.slide {
+    /* slide content wrapper used inside each section */
+    position: relative;
+    z-index: 10;
+    color: #000000;
+    line-height: 0.9;
+    mix-blend-mode: normal;
+    opacity: 1;
+}
+
+/* Scroll container + sections */
+.slides-container {
+    position: relative;
+    z-index: 20;
+    scroll-snap-type: y mandatory;
+    width: 60vw;
+    max-width: 60%;
+    margin: 0 auto; /* center horizontally */
+}
+.slide-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+/* Make slide inner content centered and responsive */
+.slide { display: flex; flex-direction: column; align-items: flex-start; padding-left: 8vw; }
+.slide .title { text-align: left; }
+.slide .heading1 { text-align: left; max-width: 80vw; }
+
+/* center the next button */
+.slide .my-5 { width: 100%; display: flex; justify-content: center; }
+
+/* Prevent horizontal overflow */
+html, body { overflow-x: hidden; }
+.slides-container, .slide-section { overflow: hidden; }
+
+.heading1 {
+    font-weight: 500;
+    font-size: clamp(24px, 3vw, 30px); 
+}
+
+.regular-text {
+    font-family: 'Zalando Sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: clamp(8px, 3vw, 18px); 
+}
+
+.title span { 
+    display: block; 
+    font-weight: 700;
+    font-size: clamp(48px, 12vw, 160px);
+}
+
+.btn-pink {
+    border-radius: 10rem;
+    background-color: none;
+    color:#e700cc;
+    font-size: 40px;
+}
+
+.btn-pink:hover {
+    background-color: #4d00440a;
+    color:#000000;
+}
+
+.btn-pinklink {
+    border-radius: 10rem;
+    background-color: #ff2eea1f;
+    color:#e700cc;
+    font-size: 40px;
+}
+
+.btn-pinklink:hover {
+    background-color: #4d00440a;
+    color:#000000;
+}
