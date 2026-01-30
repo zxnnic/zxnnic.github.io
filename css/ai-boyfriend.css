@@ -3,6 +3,7 @@ font-family: "Zalando Sans Expanded", sans-serif;
 font-optical-sizing: auto;
 font-weight: 300;
 font-style: normal;
+font-display: swap;
 }
 .zalando-sans {
   font-family: "Zalando Sans", sans-serif;
@@ -11,6 +12,8 @@ font-style: normal;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+    font-display: swap;
+
 }
 
 /* Wireframe / demo styles for GSAP animation */
@@ -90,7 +93,7 @@ html, body { overflow-x: hidden; }
 .title span { 
     display: block; 
     font-weight: 700;
-    font-size: clamp(48px, 12vw, 160px);
+    font-size: clamp(48px, 12vw, 120px);
 }
 
 .btn-pink {
@@ -109,7 +112,7 @@ html, body { overflow-x: hidden; }
     border-radius: 10rem;
     background-color: #ff2eea1f;
     color:#e700cc;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .btn-pinklink:hover {

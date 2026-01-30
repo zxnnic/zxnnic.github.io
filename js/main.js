@@ -122,8 +122,8 @@ $(document).ready(() => {
         function insertDataRow(container, d) {
             if (!d.authors) return
             let authors = d.authors || "";
-            authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
-                             .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
+            authors = authors.replace(/Zixin Zhao/g, '<span class="circle-me" style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
+                             .replace(/Nicole Zhao/g, '<span class="circle-me" style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             let links = ''
             if (d.demo_link !== '') {
                 links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
@@ -171,8 +171,8 @@ $(document).ready(() => {
         // insert them vertically
         function insertDataCol(container, d) {
             let authors = d.authors || "";
-            authors = authors.replace(/Zixin Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
-                             .replace(/Nicole Zhao/g, '<span style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
+            authors = authors.replace(/Zixin Zhao/g, '<span class="circle-me" style="text-decoration:underline;font-style:italic;">Zixin Zhao</span>')
+                             .replace(/Nicole Zhao/g, '<span class="circle-me" style="text-decoration:underline;font-style:italic;">Nicole Zhao</span>');
             let links = '';
             if (d.demo_link !== '') {
                 links += `<a href="${d.demo_link}" target="_blank">Project Page</a>&nbsp;|&nbsp;`;
@@ -226,4 +226,112 @@ $(document).ready(() => {
     //     const imgTag = `<img src='./images/random/${randomImages[idx]}' style='max-width:150px;height:100%;height:auto;'>`;
     //     $('#surprise-image').html(imgTag);
     // });
+
+    // Sketchy circle overlay for elements with class `circle-me`.
+    (function initSketchyCircle(){
+        const DPR = window.devicePixelRatio || 1;
+
+        function createCanvasFor(el){
+            const rect = el.getBoundingClientRect();
+            const pad = 10;
+            // ellipse dimensions: width = element width + 10, height = element height + 5
+            const elemW = Math.max(16, Math.round(rect.width + 35));
+            const elemH = Math.max(16, Math.round(rect.height + 25));
+            const canvasW = Math.round(elemW + pad*2);
+            const canvasH = Math.round(elemH + pad*2);
+            const canvas = document.createElement('canvas');
+            canvas.className = 'circle-overlay';
+            // Position the canvas so the ellipse is centered on the element
+            const left = rect.left + window.scrollX - pad - 15;
+            const top = rect.top + window.scrollY - pad - 15;
+            canvas.style.left = left + 'px';
+            canvas.style.top = top + 'px';
+            canvas.style.width = canvasW + 'px';
+            canvas.style.height = canvasH + 'px';
+            canvas.width = Math.round(canvasW * DPR);
+            canvas.height = Math.round(canvasH * DPR);
+            const ctx = canvas.getContext('2d');
+            ctx.scale(DPR, DPR);
+            return {canvas, ctx, w: canvasW, h: canvasH, pad, rect, elemW, elemH};
+        }
+
+        function drawSketch(ctx, w, h, opts, elemW, elemH, progress, rotationRad){
+            ctx.clearRect(0,0,w,h);
+            const cx = w/2;
+            const cy = h/2;
+            // ellipse radii based on element size (half widths)
+            const rx = Math.max(3, elemW/2 - opts.pad);
+            const ry = Math.max(3, elemH/2 - opts.pad);
+            ctx.lineWidth = 1;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = 'rgba(224, 82, 94, 0.53)';
+
+            // start at top (90deg = -PI/2) and render clockwise
+            const startAngle = -Math.PI/2; // top
+            const total = 2 * Math.PI;
+            const endAngle = startAngle + total * Math.max(0, Math.min(1, progress));
+
+            // Draw the progressive main loop (clockwise)
+            ctx.beginPath();
+            if (ctx.ellipse) ctx.ellipse(cx, cy, rx, ry, rotationRad, startAngle, endAngle, false);
+            else ctx.arc(cx, cy, Math.max(1, (rx+ry)/2), startAngle, endAngle, false);
+            ctx.stroke();
+
+            // subtle secondary stroke after fully drawn for slight sketchiness
+            if (progress >= 1) {
+                const jitter = opts.jitter || 1.2;
+                ctx.beginPath();
+                const ox = (Math.random()-0.5) * jitter;
+                const oy = (Math.random()-0.5) * jitter;
+                const orx = rx + (Math.random()-0.5) * (jitter*0.6);
+                const ory = ry + (Math.random()-0.5) * (jitter*0.6);
+                const rot = rotationRad + (Math.random()-0.5) * 0.03;
+                if (ctx.ellipse) ctx.ellipse(cx+ox, cy+oy, orx, ory, rot, 0, Math.PI*2);
+                else ctx.arc(cx+ox, cy+oy, Math.max(1, (orx+ory)/2), 0, Math.PI*2);
+                ctx.globalAlpha = 0.95;
+                ctx.stroke();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        const active = new WeakMap();
+
+        function start(el){
+            if (active.has(el)) return;
+            const color = '#4e4e4e';
+            const {canvas, ctx, w, h, pad, elemW, elemH, rect} = createCanvasFor(el);
+            document.body.appendChild(canvas);
+            let rafId = null;
+            const duration = 360; // ms to draw the main loop
+            const opts = {pad: pad, lineWidth: 2, jitter: 1.2, color: color};
+            const rotationRad = -6 * Math.PI / 180;
+            const startTime = performance.now();
+            function frame(now){
+                const t = now || performance.now();
+                const progress = Math.min(1, (t - startTime) / duration);
+                drawSketch(ctx, w, h, opts, elemW, elemH, progress, rotationRad);
+                rafId = requestAnimationFrame(frame);
+            }
+            frame();
+            active.set(el, {canvas, rafId});
+        }
+
+        function stop(el){
+            const v = active.get(el);
+            if (!v) return;
+            cancelAnimationFrame(v.rafId);
+            if (v.canvas && v.canvas.parentNode) v.canvas.parentNode.removeChild(v.canvas);
+            active.delete(el);
+        }
+
+        // Delegate enter/leave so dynamically added elements work too
+        document.addEventListener('mouseover', function(e){
+            const el = e.target.closest && e.target.closest('.circle-me');
+            if (el) start(el);
+        });
+        document.addEventListener('mouseout', function(e){
+            const el = e.target.closest && e.target.closest('.circle-me');
+            if (el) stop(el);
+        });
+    })();
 });

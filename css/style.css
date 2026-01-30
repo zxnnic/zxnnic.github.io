@@ -38,6 +38,7 @@
     src: url("../fonts/SourceHanSerifSC-Light.otf") format("opentype");
     font-weight: normal; 
     font-style: normal;  
+  font-display: swap;
 }
 
 @font-face {
@@ -45,28 +46,32 @@
     src: url("../fonts/SourceHanSerifSC-Bold.otf") format("opentype");
     font-weight: bold; 
     font-style: normal;  
+  font-display: swap;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url("../fonts/Helvetica.ttf") format("opentype");
+  src: url("../fonts/Helvetica.ttf") format("truetype");
     font-weight: normal; 
     font-style: normal;  
+  font-display: swap;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url("../fonts/Helvetica-Oblique.tff") format("opentype");
+  src: url("../fonts/Helvetica-Oblique.ttf") format("truetype");
     font-weight: normal; 
     font-style: italic;  
+  font-display: swap;
 }
 
 
 @font-face {
     font-family: 'Helvetica';
-    src: url("../fonts/Helvetica-BoldOblique.ttf") format("opentype");
+  src: url("../fonts/Helvetica-BoldOblique.ttf") format("truetype");
     font-weight: bold; 
     font-style: italic;  
+  font-display: swap;
 }
 
 .circle {
@@ -112,7 +117,11 @@ a {
   /* color: #af3157 */
 }
 a:hover {
-    font-style: italic;
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.2px;
+  text-decoration-color: currentColor;
 }
 
 .highlighted {
@@ -146,9 +155,9 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.35rem 0.7rem;
+  padding: 0rem 0.5rem;
   margin: 0.15rem 0.15rem 0.15rem 0;
-  min-height: 1.5rem;
+  min-height: 1.3rem;
   border-radius: 0.9rem;
   font-weight: 600;
   font-size: 0.85rem;
@@ -175,8 +184,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
-  padding: 0.18rem 0.45rem;
-  min-height: 1.6rem;
+  padding: 0rem 0.45rem;
+  min-height: 1.3rem;
   border-radius: 0.6rem;
   font-weight: 600;
   font-size: 0.78rem;
@@ -321,3 +330,7 @@ img:hover {
 /* Ensure filter group doesn't force buttons to full width */
 .mb-3 { display: flex; flex-wrap: wrap; align-items: center; }
 .mb-3 .btn-conf { margin-right: 0.5rem; }
+
+/* Sketchy circle hover: add class `circle-me` to any element */
+.circle-me { position: relative; display: inline-block; }
+.circle-overlay { position: absolute; pointer-events: none; z-index: 9999; }

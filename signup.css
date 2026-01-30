@@ -49,4 +49,8 @@ a {
 
 a:hover {
     color: #831c17;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1.2px;
+    text-decoration-color: currentColor;
 }
