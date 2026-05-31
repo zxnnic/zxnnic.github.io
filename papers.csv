@@ -98,27 +98,15 @@ series = {CHI '25}
     publisher = ""Association for Computing Machinery"",
     doi = ""10.1145/3698061.3726916""
 }""",conf hci,images/nabokov-teaser.jpg,images/nabokov-teaser.gif,,TRUE
-9,Visual Story-Writing: Writing by Manipulating Visual Representations of Stories,"Damien Masson, Zixin Zhao, Fanny Chevalier","Writing stories by manipulating visual represenation of story elements like character actions, locations, and timelines.",UIST 2025,data//pdf//visualstorywriting.pdf,https://damienmasson.com/VisualStoryWriting/,"""@inproceedings{10.1145/3746059.3747758,
-    author = ""Masson, Damien and Zhao, Zixin and Chevalier, Fanny"",
-    title = ""Visual Story-Writing: Writing by Manipulating Visual Representations of Stories"",
-    year = ""2025"",
-    isbn = ""9798400720376"",
-    publisher = ""Association for Computing Machinery"",
-    address = ""New York, NY, USA"",
-    url = ""https://doi.org/10.1145/3746059.3747758"",
-    doi = ""10.1145/3746059.3747758"",
-    booktitle = ""Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology"",
-    numpages = ""15"",
-    location = ""Busan, Republic of Korea"",
-    series = ""UIST '25""
-}""",conf hci,images/visualstory.jpg,images/visualstory.gif,https://www.youtube.com/watch?v=wImiL14-jdc,TRUE
-10,"Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship","Patrick Yung Kang Lee, Jessica Y. Bo, Zixin Zhao, Paula Akemi Aoyagui, Matthew Varona, Ashton Anderson, Anastasia Kuziminykh, Fanny Chevalier, Carolina Nobre",Triangulation study on how individuals with general purpose AI (e.g. chatGPT) companions form and maintain their relationship.,ArXiv,https://arxiv.org/abs/2601.13188,https://zxnnic.github.io/ai-companion,"""@inproceedings{lee_boyfriend2026,
-  title={Negotiating Relationships with ChatGPT: Perceptions, External Influences, and Strategies for AI Companionship},
+9,Visual Story-Writing: Writing by Manipulating Visual Representations of Stories,"Damien Masson, Zixin Zhao, Fanny Chevalier","Writing stories by manipulating visual represenation of story elements like character actions, locations, and timelines.",UIST 2025,data//pdf//visualstorywriting.pdf,https://damienmasson.com/VisualStoryWriting/,,conf hci,images/visualstory.jpg,images/visualstory.gif,https://www.youtube.com/watch?v=wImiL14-jdc,TRUE
+10,Large Language Lovers: Lived Experiences of Negotiating Agency and Platform Control in AI Companionship ,"Patrick Yung Kang Lee, Jessica Y. Bo, Zixin Zhao, Paula Akemi Aoyagui, Matthew Varona, Ashton Anderson, Anastasia Kuziminykh, Fanny Chevalier, Carolina Nobre",Triangulation study on how individuals with general purpose AI (e.g. chatGPT) companions form and maintain their relationship.,ArXiv,https://arxiv.org/abs/2601.13188,https://zxnnic.github.io/ai-companion,"""@inproceedings{lee_boyfriend2026,
+  title={Large Language Lovers: Lived Experiences of Negotiating Agency and Platform Control in AI Companionship },
   author={Lee, Patrick Yung Kang and Bo, Jessica Y. and Zhao, Zixin and Aoyagui, Paula Akemi and Varona, Matthew and Anderson, Ashton and Kuzminykh, Anastasia and Chevalier, Fanny and Nobre, Carolina},
 year = {2026},
-publisher = {ArXiv},
+publisher = {FAccT '26},
 abstract = {
 This work sheds light on whether and how creative writers' needs are met by existing research and commercial writing support tools (WST). We conducted a need finding study to gain insight into the writers' process during creative writing through a qualitative analysis of the response from an online questionnaire and Reddit discussions on r/Writing. Using a systematic analysis of 115 tools and 67 research papers, we map out the landscape of how digital tools facilitate the writing process. Our triangulation of data reveals that research predominantly focuses on the writing activity and overlooks pre-writing activities and the importance of visualization. We distill 10 key takeaways to inform future research on WST and point to opportunities surrounding underexplored areas. Our work offers a holistic and up-to-date account of how tools have transformed the writing process, guiding the design of future tools that address writers' evolving and unmet needs.},
 numpages = {20},
+doi={10.1145/3805689.3806746},
 keywords = {Human-AI relationship, AI companionship, mixed-methods},
-}""",conf hci,images/aiboyfriend-teaser.png,,,FALSE
+}""",conf hci,images/aiboyfriend-teaser.png,images/aiboyfriend-teaser.png,,FALSE
