@@ -1,138 +1,696 @@
-.zalando-sans-expanded {
-font-family: "Zalando Sans Expanded", sans-serif;
-font-optical-sizing: auto;
-font-weight: 300;
-font-style: normal;
-font-display: swap;
-}
-.zalando-sans {
-  font-family: "Zalando Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-    font-display: swap;
-
-}
-
-/* Wireframe / demo styles for GSAP animation */
-.ai-wireframe {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    overflow: visible;
-}
-#ai-image {
-    max-width: none;
-    /* Make the image occupy roughly half the viewport */
-    width: 50vw;
-    max-height: auto;
-    height: auto;
-    display: block;
-    transform-origin: center center;
-    transform: none;
-    will-change: transform;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.25));
-}
-
-.slide {
-    /* slide content wrapper used inside each section */
-    position: relative;
-    z-index: 10;
-    color: #000000;
-    line-height: 0.9;
-    mix-blend-mode: normal;
-    opacity: 1;
-}
-
-/* Scroll container + sections */
-.slides-container {
-    position: relative;
-    z-index: 20;
-    scroll-snap-type: y mandatory;
-    width: 60vw;
-    max-width: 60%;
-    margin: 0 auto; /* center horizontally */
-}
-.slide-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
-}
-
-/* Make slide inner content centered and responsive */
-.slide { display: flex; flex-direction: column; align-items: flex-start; padding-left: 8vw; }
-.slide .title { text-align: left; }
-.slide .heading1 { text-align: left; max-width: 80vw; }
-
-/* center the next button */
-.slide .my-5 { width: 100%; display: flex; justify-content: center; }
-
-/* Prevent horizontal overflow */
-html, body { overflow-x: hidden; }
-.slides-container, .slide-section { overflow: hidden; }
-
-.heading1 {
-    font-weight: 500;
-    font-size: clamp(24px, 3vw, 30px); 
-}
-
-.regular-text {
-    font-family: 'Zalando Sans', Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: clamp(8px, 3vw, 18px); 
-}
-
-.title span { 
-    display: block; 
-    font-weight: 700;
-    font-size: clamp(48px, 12vw, 120px);
-}
-
-.btn-pink {
-    border-radius: 10rem;
-    background-color: none;
-    color:#e700cc;
-    font-size: 40px;
-}
-
-.btn-pink:hover {
-    background-color: #4d00440a;
-    color:#000000;
-}
-
-.btn-pinklink {
-    border-radius: 10rem;
-    background-color: #ff2eea1f;
-    color:#e700cc;
-    font-size: 30px;
-}
-
-.btn-pinklink:hover {
-    background-color: #4d00440a;
-    color:#000000;
-}
-
-@media (max-width: 768px) {
-    .slides-container {
-        width: 100vw;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
+    :root {
+      --pink: #d2009a;
+      --pink-light: #FFB3F0;
+      --pink-lightest: #ffd9f7;
+      --pink-dim: rgba(255, 0, 204, 0.12);
+      --pink-a: #5c0043;
+      --pink-border: rgba(255, 0, 204, 0.3);
+      --white: #ffffff;
+      --off-white: #FFF5FD;
     }
-    .slide {
-        padding-left: 4vw;
-        padding-right: 4vw;
-        align-items: stretch;
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--pink);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
     }
-    .slide .heading1 { max-width: 100%; }
-    .slide .title { width: 100%; }
-    #ai-image { max-width: 100%; width: auto; }
-}
+
+    a {
+      color: var(--pink-a);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 8vw;
+      position: relative;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 2rem;
+    }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* ══════════════════════════════════
+       § 1  TITLE
+    ══════════════════════════════════ */
+    #title {
+      min-height: 100vh;
+      padding: 0 8vw;
+      justify-content: flex-end;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--pink-border);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    #ai-image {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      width: min(170vw, 1000px);
+      max-width: none;
+      height: auto;
+      opacity: 0.45;
+      z-index: 0;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    #title > *:not(#ai-image) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .title-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 2rem;
+    }
+
+    .title-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(4rem, 12vw, 11rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    .title-title span {
+      display: block;
+    }
+
+    .title-title .word-language {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .title-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      opacity: 0.7;
+      margin-bottom: 4rem;
+      max-width: 500px;
+    }
+
+    .title-quote {
+      max-width: 700px;
+      border-left: 2px solid var(--pink);
+      padding-left: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .title-quote p {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.55;
+    }
+
+    .title-quote cite {
+      display: block;
+      font-size: 0.8rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.1em;
+      margin-top: 1rem;
+      opacity: 0.5;
+      font-style: normal;
+    }
+
+    .scroll-cue {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .scroll-cue svg {
+      width: 20px;
+      height: 20px;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ══════════════════════════════════
+       § 2  DATA TRIANGULATION
+    ══════════════════════════════════ */
+    #methods {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--pink-border);
+    }
+
+    .methods-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 4rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .methods-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.7;
+      margin-bottom: 4rem;
+    }
+
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 900px;
+    }
+
+    .method-card {
+      border: 1.5px solid var(--pink);
+      padding: 2.5rem 2rem;
+      position: relative;
+      background: white;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .method-card:hover {
+      background: var(--pink-dim);
+    }
+
+    .method-n {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      opacity: 0.15;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .method-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .method-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .method-detail {
+      font-size: 0.9rem;
+      opacity: 0.65;
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════
+       § 3  RELATIONSHIP TIMELINE
+    ══════════════════════════════════ */
+    #timeline {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--pink-border);
+      padding-bottom: 100px;
+    }
+
+    .timeline-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.5rem, 4vw, 3.5rem);
+      margin-bottom: 4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    #timeline-svg {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .stage-info {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .stage-card {
+      border-top: 2px solid var(--pink);
+      padding: 1rem 1rem 0;
+      margin: 0 -1rem;
+      opacity: 0.45;
+      background: transparent;
+      transition: opacity 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+
+    .stage-card.active, .stage-card:hover {
+      opacity: 1;
+      background: var(--white);
+    }
+
+    .stage-card-name {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .stage-card-desc {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════
+       § 4  AI LOVE LANGUAGE
+    ══════════════════════════════════ */
+    #language {
+      border-bottom: 1px solid var(--pink-border);
+    }
+
+    .language-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 5vw, 4.5rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .language-sub {
+      font-size: 0.85rem;
+      font-family: 'Space Mono', monospace;
+      opacity: 0.45;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 4rem;
+    }
+
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5px;
+    }
+
+    .word-entry {
+      border: 1.5px solid var(--pink-border);
+      padding: 2rem;
+      background: white;
+      transition: background 0.3s, transform 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .word-entry::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--pink);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .word-entry:hover::after {
+      transform: scaleX(1);
+    }
+
+    .word-entry:hover {
+      background: var(--pink-dim);
+    }
+
+    .word-term {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .word-phonetic {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      opacity: 0.45;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .word-def {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    /* ══════════════════════════════════
+       § 5  HOW DO YOU SEE YOUR COMPANION?
+    ══════════════════════════════════ */
+    #companion {
+      border-bottom: 1px solid var(--pink-border);
+    }
+
+    .companion-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 4rem;
+      max-width: 800px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .traits-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+    }
+
+    @media (max-width: 768px) {
+      .traits-layout { grid-template-columns: 1fr; }
+      .methods-grid { grid-template-columns: 1fr; }
+    }
+
+    .trait-block h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .trait-block h2 {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .pseudocode {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      line-height: 2;
+      background: var(--off-white);
+      border: 1px solid var(--pink-border);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 2px;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .pseudo-keyword { font-weight: 700; }
+    .pseudo-condition { opacity: 0.55; }
+    .pseudo-value { font-style: italic; }
+
+    .strategy-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .strategy-cards { grid-template-columns: 1fr; }
+    }
+
+    .strategy-card {
+      border: 1.5px solid var(--pink);
+      padding: 1.5rem 1.75rem;
+      background: white;
+      transition: background 0.3s;
+    }
+
+    .strategy-card:hover {
+      background: var(--pink-dim);
+    }
+
+    .strategy-tag {
+      display: inline-block;
+      background: var(--pink);
+      color: white;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .strategy-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .strategy-desc {
+      font-size: 0.85rem;
+      opacity: 0.65;
+      line-height: 1.55;
+    }
+
+    /* ══════════════════════════════════
+       § 6  INFLUENCES
+    ══════════════════════════════════ */
+    #influences {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--pink-border);
+    }
+
+    .influences-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+
+    .influences-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .influences-note {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.65;
+      max-width: 760px;
+      margin-bottom: 3.5rem;
+    }
+
+    .influences-note strong {
+      font-weight: 500;
+      font-style: italic;
+      opacity: 1;
+    }
+
+    #influences-svg {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    /* ══════════════════════════════════
+       § 7  TEAM
+    ══════════════════════════════════ */
+    #team {
+      border-bottom: 1px solid var(--pink-border);
+    }
+
+    .team-heading {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .team-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 4rem;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 3.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      cursor: default;
+    }
+
+    .avatar {
+      width: 200px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      clip-path: circle(50%);
+      transition: background 0.3s, color 0.3s, clip-path 0.4s ease;
+    }
+
+    .team-member:hover .avatar {
+      background: var(--pink-lightest);
+      color: white;
+      border-radius: 0;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .member-name {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .thanks-block {
+      border-top: 1px solid var(--pink-border);
+      padding-top: 3rem;
+    }
+
+    .thanks-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 1.5rem;
+    }
+
+    .thanks-names {
+      font-size: 0.9rem;
+      line-height: 2.2;
+      opacity: 0.65;
+      columns: 3;
+      column-gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .thanks-names { columns: 1; }
+    }
+
+    /* ══════════════════════════════════
+       § 8  FOOTER
+    ══════════════════════════════════ */
+    footer {
+      padding: 4rem 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+      border-top: 1px solid var(--pink-border);
+    }
+
+    .footer-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-copy {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      opacity: 0.35;
+      text-align: right;
+    }
+
+    /* ══════════════════════════════════
+       TIMELINE SVG interactive dots
+    ══════════════════════════════════ */
+    .tl-dot {
+      cursor: pointer;
+      transition: r 0.2s;
+    }
+    .tl-dot circle {
+      transition: r 0.2s ease, fill 0.2s ease;
+    }
+    .tl-dot:hover circle,
+    .tl-dot.active circle {
+      r: 8;
+      fill: #FF00CC;
+    }
