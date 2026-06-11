@@ -604,22 +604,45 @@
     .avatar {
       width: 200px;
       height: 90px;
-      border-radius: 50%;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Unbounded', sans-serif;
       font-weight: 900;
       font-size: 1.5rem;
-      clip-path: circle(50%);
-      transition: background 0.3s, color 0.3s, clip-path 0.4s ease;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .avatar::before {
+      content: '';
+      position: absolute;
+      inset: -8px 12px 0;
+      background: var(--pink-lightest);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .team-member:hover .avatar {
-      background: var(--pink-lightest);
       color: white;
-      border-radius: 0;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .team-member:hover .avatar::before {
+      opacity: 1;
+    }
+
+    .avatar > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     .member-name {
