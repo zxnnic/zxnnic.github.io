@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Fanfics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  max-width: 320px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #fff;
+  background: rgba(17, 24, 39, 0.92);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.12s ease;
+  z-index: 50;
+}
+
+.dot {
+  stroke: #fff;
+  stroke-width: 0.5;
+  cursor: pointer;
+  transition: r 0.1s ease;
+}
+
+.dot:hover {
+  stroke: #111;
+  stroke-width: 1.5;
+}
+
+.legend-item:hover .legend-bg {
+  fill: #e5e7eb;
+}
+
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-1">Basically BERTopic clustering of the elements</h1>
+    <p class="text-sm text-gray-500 mb-4">hover to see tweet content</p>
+    <div id="chart" class="bg-white rounded-lg shadow border border-gray-200"></div>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
+
+  <script>
+    const margin = { top: 20, right: 260, bottom: 40, left: 40 };
+const width = 1100 - margin.left - margin.right;
+const height = 700 - margin.top - margin.bottom;
+
+const svg = d3.select("#chart")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", `translate(${margin.left},${margin.top})`);
+
+const tooltip = d3.select("#tooltip");
+
+d3.csv("./data/claudeseed_filtered_topics_2d.csv").then(data => {
+  data.forEach(d => {
+    d.x = +d.x;
+    d.y = +d.y;
+  });
+
+  const x = d3.scaleLinear()
+    .domain(d3.extent(data, d => d.x)).nice()
+    .range([0, width]);
+
+  const y = d3.scaleLinear()
+    .domain(d3.extent(data, d => d.y)).nice()
+    .range([height, 0]);
+
+  // Distinct color per topic_label.
+  const topicLabels = Array.from(new Set(data.map(d => d.topic_label))).sort(d3.ascending);
+  const color = d3.scaleOrdinal()
+    .domain(topicLabels)
+    .range(d3.quantize(t => d3.interpolateRainbow(t), Math.max(topicLabels.length, 2)));
+
+  svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x));
+
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+  const dots = svg.selectAll(".dot")
+    .data(data)
+    .join("circle")
+    .attr("class", "dot")
+    .attr("cx", d => x(d.x))
+    .attr("cy", d => y(d.y))
+    .attr("r", 4)
+    .attr("fill", d => color(d.topic_label))
+    .attr("fill-opacity", 0.75)
+    .on("mouseover", (event, d) => {
+      tooltip
+        .style("opacity", 1)
+        .html(`<strong>${d.topic_label}</strong><br>${d.text}`);
+    })
+    .on("mousemove", event => {
+      tooltip
+        .style("left", (event.pageX + 12) + "px")
+        .style("top", (event.pageY + 12) + "px");
+    })
+    .on("mouseout", () => {
+      tooltip.style("opacity", 0);
+    });
+
+  // Legend
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width + 24}, 0)`);
+
+  legend.append("text")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("font-weight", "bold")
+    .attr("font-size", 13)
+    .text("Hover and click labels here to see topic details");
+
+  // selectedTopic holds a locked filter (via click); null means no filter.
+  let selectedTopic = null;
+
+  const applyOpacity = label => {
+    dots.attr("fill-opacity", d => {
+      if (label === null) return 0.75;
+      return d.topic_label === label ? 0.9 : 0.1;
+    });
+  };
+
+  const highlightTopic = label => {
+    // Hover only previews when nothing is locked.
+    if (selectedTopic === null) applyOpacity(label);
+  };
+  const resetTopics = () => {
+    applyOpacity(selectedTopic);
+  };
+  const toggleTopic = label => {
+    selectedTopic = selectedTopic === label ? null : label;
+    applyOpacity(selectedTopic);
+    item.select("text").attr("font-weight", d => d === selectedTopic ? "bold" : "normal");
+  };
+
+  const item = legend.selectAll(".legend-item")
+    .data(topicLabels)
+    .join("g")
+    .attr("class", "legend-item")
+    .attr("transform", (d, i) => `translate(0, ${16 + i * 20})`)
+    .style("cursor", "pointer")
+    .on("mouseover", (event, d) => highlightTopic(d))
+    .on("mouseout", resetTopics)
+    .on("click", (event, d) => toggleTopic(d));
+
+  item.append("rect")
+    .attr("class", "legend-bg")
+    .attr("x", -4)
+    .attr("y", -2)
+    .attr("width", 200)
+    .attr("height", 18)
+    .attr("rx", 3)
+    .attr("fill", "transparent");
+
+  item.append("circle")
+    .attr("r", 6)
+    .attr("cx", 6)
+    .attr("cy", 6)
+    .attr("fill", d => color(d));
+
+  item.append("text")
+    .attr("x", 18)
+    .attr("y", 10)
+    .attr("font-size", 12)
+    .text(d => d.length > 30 ? d.slice(0, 30) + "…" : d);
+});
+
+  </script>
+</body>
+</html>
